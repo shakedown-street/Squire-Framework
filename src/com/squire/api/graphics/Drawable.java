@@ -2,28 +2,31 @@ package com.squire.api.graphics;
 
 import java.awt.Graphics;
 
-import com.squire.api.Point;
-import com.squire.api.Size;
-
+/**
+ * Extending creates an object that can be drawn onto the world.
+ * 
+ * @author Jordan Price
+ *
+ */
 public abstract class Drawable {
 
-	protected Point pos;
-	protected Size size;
+	protected int x, y, w, h;
 	protected Sprite sprite;
-	
-	public Drawable(Sprite sprite, Point pos, Size size) {
-		this.sprite = sprite;
-		this.setPos(pos);
-		this.setSize(size);
-	}
-	
+
 	public Drawable(Sprite sprite, int x, int y, int w, int h) {
-		this(sprite, new Point(x, y), new Size(w, h));
+		this.sprite = sprite;
+		this.x = x;
+		this.y = y;
+		this.w = w;
+		this.h = h;
 	}
 
-	public void draw(Graphics g) {
-		sprite.draw(g, pos.x, pos.y, size.w, size.h);
-	}
+	/**
+	 * Overridden by child classes to specify how to draw the object.
+	 * 
+	 * @param g
+	 */
+	public abstract void draw(Graphics g);
 
 	public Sprite getSprite() {
 		return sprite;
@@ -33,19 +36,36 @@ public abstract class Drawable {
 		this.sprite = sprite;
 	}
 
-	public Point getPos() {
-		return pos;
+	public int getX() {
+		return x;
 	}
 
-	public void setPos(Point pos) {
-		this.pos = pos;
+	public void setX(int x) {
+		this.x = x;
 	}
 
-	public Size getSize() {
-		return size;
+	public int getY() {
+		return y;
 	}
 
-	public void setSize(Size size) {
-		this.size = size;
+	public void setY(int y) {
+		this.y = y;
 	}
+
+	public int getW() {
+		return w;
+	}
+
+	public void setW(int w) {
+		this.w = w;
+	}
+
+	public int getH() {
+		return h;
+	}
+
+	public void setH(int h) {
+		this.h = h;
+	}
+
 }

@@ -1,18 +1,30 @@
 package com.squire.api.entity;
 
-import com.squire.api.Point;
-import com.squire.api.Size;
+import com.squire.api.event.Updatable;
 import com.squire.api.graphics.Drawable;
 import com.squire.api.graphics.Sprite;
 
-public class Entity extends Drawable {
-	
-	public Entity(Sprite sprite, Point pos, Size size) {
-		super(sprite, pos, size);
-	}
-	
+/**
+ * And Entity encompasses any object such as players, enemies, projectiles and
+ * other things like that. Basically they are movable game objects.
+ * 
+ * @author Pork
+ *
+ */
+public abstract class Entity extends Drawable implements Updatable {
+
 	public Entity(Sprite sprite, int x, int y, int w, int h) {
-		this(sprite, new Point(x, y), new Size(w, h));
+		super(sprite, x, y, w, h);
 	}
-	
+
+	public void translate(int x, int y) {
+		this.x += x;
+		this.y += y;
+	}
+
+	public void moveTo(int x, int y) {
+		this.x = x;
+		this.y = x;
+	}
+
 }

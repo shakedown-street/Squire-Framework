@@ -10,6 +10,9 @@ import javax.imageio.ImageIO;
  * Creates sheets of game images and returns cropped images (single Sprite
  * objects) at specific locations on the sheet.
  * 
+ * I would eventually like to add automatic XML configuration of sheets but this
+ * works well enough for my current time-sensitive purposes.
+ * 
  * @author Jordan Price
  *
  */
@@ -17,12 +20,21 @@ public class SpriteSheet {
 
 	private BufferedImage img;
 
+	/**
+	 * Create a Sprite sheet from a local file.
+	 * 
+	 * @param f
+	 */
 	public SpriteSheet(File f) {
 		try {
 			this.img = ImageIO.read(f);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public SpriteSheet(BufferedImage img) {
+		this.img = img;
 	}
 
 	/**
@@ -38,7 +50,7 @@ public class SpriteSheet {
 	 *            sprite height
 	 * @return
 	 */
-	public Sprite sprite(int x, int y, int w, int h) {
+	public Sprite getSprite(int x, int y, int w, int h) {
 		return new Sprite(img.getSubimage(x, y, w, h));
 	}
 
