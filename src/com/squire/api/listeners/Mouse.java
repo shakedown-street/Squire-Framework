@@ -12,6 +12,8 @@ import java.awt.event.MouseMotionListener;
  *
  */
 public class Mouse implements MouseListener, MouseMotionListener {
+	
+	public static int mouseX, mouseY, clickX, clickY = 0;
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
@@ -20,12 +22,14 @@ public class Mouse implements MouseListener, MouseMotionListener {
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-
+		Mouse.mouseX = e.getX();
+		Mouse.mouseY = e.getY();
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-
+		Mouse.clickX = e.getX();
+		Mouse.clickY = e.getY();
 	}
 
 	@Override

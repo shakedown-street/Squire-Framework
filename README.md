@@ -1,2 +1,7 @@
 # Squire-Framework
-A jar-able game engine which can be extended in Java or Ruby.
+A jar-able game engine written in Java.
+
+#### Features
+* A scripting system for writing content in JavaScript
+* Entity based.
+* Sprite and Spritesheet handling.

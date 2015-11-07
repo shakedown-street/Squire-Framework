@@ -16,20 +16,6 @@ import com.squire.api.listeners.Mouse;
  * Entry point for the framework. Creating a new instance of the world class
  * will start a frame with the drawing/updating canvas inside of it.
  * 
- * Email to tycast@microsoft.com
- * 
- * Assignment: Final Project
- * 
- * Expected Time To Complete: Well over the time given :D
- * 
- * Actual Time to Complete: Used all the time I had to work on it, but it is far
- * from complete still.
- * 
- * Comments: Due to my work schedule I didn't have as much time for this as I
- * would have liked, so I did what I could, but there are several things from
- * the rubric that I did not have time to implement, and some things are not
- * done as well as I would have liked them to be.
- * 
  * @author Jordan Price
  * 
  */
@@ -119,8 +105,7 @@ public class World extends JComponent implements Runnable {
 	private long diff, start = System.currentTimeMillis();
 
 	/**
-	 * I had to look up how to do this. This limits the game to 30 frames per
-	 * second.
+	 * This limits the game to 30 frames per second.
 	 * 
 	 * @param fps
 	 *            The amount of frames per second the game runs at.

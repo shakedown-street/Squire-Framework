@@ -64,22 +64,7 @@ public class Sprite {
 	public void draw(Graphics g, int x, int y) {
 		g.drawImage(getImg(), x, y, null);
 	}
-
-	/**
-	 * Should be used in the draw method of classes implementing the Drawable
-	 * interface, not directly.
-	 * 
-	 * @param g
-	 *            Graphics object
-	 * @param x
-	 *            x Origin
-	 * @param y
-	 *            y Origin
-	 * @param w
-	 *            width to draw sprite
-	 * @param h
-	 *            height to draw sprite
-	 */
+	
 	public void draw(Graphics g, int x, int y, int w, int h) {
 		g.drawImage(getImg(), x, y, w, h, null);
 	}
