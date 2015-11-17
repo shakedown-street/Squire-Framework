@@ -4,7 +4,7 @@ import java.awt.Graphics;
 
 /**
  * Extending creates an object that can be drawn onto the world.
- * 
+ *
  * @author Jordan Price
  *
  */
@@ -23,8 +23,6 @@ public abstract class Drawable {
 
 	/**
 	 * Overridden by child classes to specify how to draw the object.
-	 * 
-	 * @param g
 	 */
 	public abstract void draw(Graphics g);
 

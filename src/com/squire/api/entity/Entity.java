@@ -5,13 +5,12 @@ import com.squire.api.graphics.Drawable;
 import com.squire.api.graphics.Sprite;
 
 /**
- * And Entity encompasses any object such as players, enemies, projectiles and
- * other things like that. Basically they are movable game objects.
- * 
+ * a game object with distinct and independent existence.
+ *
  * @author Pork
  *
  */
-public abstract class Entity extends Drawable implements Updatable {
+public abstract class Entity extends Drawable {
 
 	public Entity(Sprite sprite, int x, int y, int w, int h) {
 		super(sprite, x, y, w, h);
