@@ -7,13 +7,13 @@ import java.awt.event.MouseMotionListener;
 /**
  * Because of the short time frame and my work schedule I was unable to
  * implement click/mouse handling.
- * 
+ *
  * @author Jordan Price
  *
  */
 public class Mouse implements MouseListener, MouseMotionListener {
-	
-	public static int mouseX, mouseY, clickX, clickY = 0;
+
+	public static int mouseX, mouseY;
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
@@ -28,8 +28,7 @@ public class Mouse implements MouseListener, MouseMotionListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		Mouse.clickX = e.getX();
-		Mouse.clickY = e.getY();
+		
 	}
 
 	@Override

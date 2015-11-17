@@ -7,7 +7,7 @@ import com.squire.api.graphics.Sprite;
 /**
  * a game object with distinct and independent existence.
  *
- * @author Pork
+ * @author Jordan Price
  *
  */
 public abstract class Entity extends Drawable {

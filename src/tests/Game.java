@@ -3,7 +3,6 @@ package tests;
 import java.io.File;
 
 import com.squire.api.World;
-import com.squire.api.graphics.Background;
 import com.squire.api.graphics.Sprite;
 import com.squire.api.graphics.SpriteSheet;
 
@@ -17,12 +16,6 @@ public class Game {
 		Sprite gameScreen = new Sprite(sheet, 800, 0, 800, 500);
 		Sprite playerSprite = new Sprite(sheet, 0, 500, 50, 50);
 		Sprite enemySprite = new Sprite(sheet, 50, 500, 50, 50);
-
-		Background bg = new Background(startScreen, 0, 0, 800, 500);
-		Player p = new Player(enemySprite, 0, 0, 50, 50);
-
-		world.appendRender(bg, p);
-		world.appendUpdate(p);
 	}
 
 }
