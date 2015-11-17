@@ -8,9 +8,8 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
 /**
- * I decided because of the short time to go ahead and add a Javascript
- * evaluator instead of JRuby. However, in the future if I did continue this
- * project I would implement a JRuby evalutator instead.
+ * Probably going to be scrapped in the future.
+ * Currently not being utilized.
  *
  * @author Jordan Price
  *
@@ -22,7 +21,7 @@ public class ScriptManager {
 			.getEngineByName("nashorn");
 
 	/**
-	 * Call a function from a script
+	 * Call a function from a script file
 	 */
 	public static String callFunc(String name, Object... args) {
 		Invocable invoke = (Invocable) scriptEngine;
@@ -35,7 +34,7 @@ public class ScriptManager {
 	}
 
 	/**
-	 * Load Scripts from each sub directory/file of the initial directory
+	 * Load Scripts from the initial directory and all sub directories.
 	 */
 	public static void loadScripts(String directory) {
 		File dir = new File(directory);

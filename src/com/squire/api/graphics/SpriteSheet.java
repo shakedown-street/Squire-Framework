@@ -7,11 +7,10 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 /**
- * Creates sheets of game images and returns cropped images (single Sprite
- * objects) at specific locations on the sheet.
+ * Creates sheets of game images and returns cropped portions of the sheet as
+ * Sprites.
  *
- * I would eventually like to add automatic XML configuration of sheets but this
- * works well enough for my current time-sensitive purposes.
+ * I would eventually like to add automatic XML configuration of sheets.
  *
  * @author Jordan Price
  *
