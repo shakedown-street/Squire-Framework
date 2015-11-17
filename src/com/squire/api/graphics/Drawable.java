@@ -3,7 +3,7 @@ package com.squire.api.graphics;
 import java.awt.Graphics;
 
 /**
- * Extending creates an object that can be drawn onto the world.
+ * an object that can be drawn onto the world.
  *
  * @author Jordan Price
  *

@@ -1,6 +1,5 @@
 package com.squire.api.entity;
 
-import com.squire.api.event.Updatable;
 import com.squire.api.graphics.Drawable;
 import com.squire.api.graphics.Sprite;
 

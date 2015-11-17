@@ -6,7 +6,6 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
-import com.squire.api.event.Updatable;
 import com.squire.api.graphics.Drawable;
 import com.squire.api.listeners.Key;
 import com.squire.api.listeners.Mouse;

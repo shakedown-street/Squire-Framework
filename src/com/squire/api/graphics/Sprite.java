@@ -10,10 +10,6 @@ import javax.imageio.ImageIO;
 /**
  * Represents a game image.
  *
- * Sprites do not extend Drawable and therefore can't be submitted to the render
- * block. The draw methods are for drawing Sprites in classes that do extend
- * Drawable.
- *
  * @author Jordan Price
  *
  */

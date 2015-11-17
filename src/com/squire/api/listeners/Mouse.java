@@ -5,8 +5,6 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 /**
- * Because of the short time frame and my work schedule I was unable to
- * implement click/mouse handling.
  *
  * @author Jordan Price
  *
@@ -28,7 +26,7 @@ public class Mouse implements MouseListener, MouseMotionListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		
+
 	}
 
 	@Override
