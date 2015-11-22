@@ -12,7 +12,7 @@ import java.awt.event.KeyListener;
  */
 public class Key implements KeyListener {
 
-	public static boolean[] keymap = new boolean[256];
+	public static boolean[] keymap = new boolean[1024 * 1000];
 
 	@Override
 	public void keyPressed(KeyEvent e) {

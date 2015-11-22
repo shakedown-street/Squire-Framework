@@ -10,8 +10,6 @@ import javax.imageio.ImageIO;
  * Creates sheets of game images and returns cropped portions of the sheet as
  * Sprites.
  *
- * I would eventually like to add automatic XML configuration of sheets.
- *
  * @author Jordan Price
  *
  */

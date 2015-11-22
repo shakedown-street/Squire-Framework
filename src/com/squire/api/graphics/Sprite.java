@@ -42,10 +42,6 @@ public class Sprite {
 		this.img = sheet.getSprite(x, y, w, h).getImg();
 	}
 
-	/**
-	 * Should be used in the draw method of classes implementing the Drawable
-	 * interface, not directly.
-	 */
 	public void draw(Graphics g, int x, int y) {
 		g.drawImage(getImg(), x, y, null);
 	}

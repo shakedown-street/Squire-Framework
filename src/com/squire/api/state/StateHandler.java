@@ -1,19 +1,33 @@
 package com.squire.api.state;
 
+import java.awt.Graphics;
+
 public class StateHandler {
-	
-	private State currentState;
-	
-	public StateHandler() {
-		
+
+	private static State currentState;
+	private static BlankState blankState = new BlankState();
+
+	public static void updateCurrentState() {
+		if (currentState != null) {
+			currentState.process();
+		}
 	}
-	
-	public State getState() {
-		return currentState;
+
+	public static void renderCurrentState(Graphics g) {
+		if (currentState != null) {
+			currentState.render(g);
+		}
 	}
-	
-	public void setState(State newState) {
-		this.currentState = newState;
+
+	public static State getState() {
+		if (currentState != null) {
+			return currentState;
+		}
+		return blankState;
 	}
-	
+
+	public static void setState(State newState) {
+		currentState = newState;
+	}
+
 }
