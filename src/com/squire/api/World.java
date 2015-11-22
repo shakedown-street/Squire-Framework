@@ -6,9 +6,9 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
-import com.squire.api.graphics.Drawable;
 import com.squire.api.listeners.Key;
 import com.squire.api.listeners.Mouse;
+import com.squire.api.state.StateHandler;
 
 /**
  * Entry point for the framework. Creating a new instance of the world class
@@ -18,8 +18,10 @@ import com.squire.api.listeners.Mouse;
  */
 public class World extends JComponent implements Runnable {
 
-	private static final long serialVersionUID = 1L;
 	private JFrame frame;
+	private static final long serialVersionUID = 1L;
+	
+	private StateHandler stateHandler = new StateHandler();
 
 	public World(int width, int height) {
 		frame = new JFrame("Squire");
@@ -55,7 +57,8 @@ public class World extends JComponent implements Runnable {
 	 * Updates game state.
 	 */
 	public void process() {
-
+		if (stateHandler.getState() != null)
+			stateHandler.getState().process();
 	}
 
 	/**
@@ -64,6 +67,8 @@ public class World extends JComponent implements Runnable {
 	@Override
 	public void paintComponent(Graphics g) {
 		g.clearRect(0, 0, getWidth(), getHeight());
+		if (stateHandler.getState() != null)
+			stateHandler.getState().render(g);
 	}
 
 	@Override
@@ -94,6 +99,14 @@ public class World extends JComponent implements Runnable {
 			}
 			start = System.currentTimeMillis();
 		}
+	}
+
+	public StateHandler getStateHandler() {
+		return stateHandler;
+	}
+
+	public void setStateHandler(StateHandler stateHandler) {
+		this.stateHandler = stateHandler;
 	}
 
 	/**
