@@ -5,7 +5,6 @@ import java.awt.Graphics;
 public class StateHandler {
 
 	private static State currentState;
-	private static BlankState blankState = new BlankState();
 
 	public static void updateCurrentState() {
 		if (currentState != null) {
@@ -19,14 +18,7 @@ public class StateHandler {
 		}
 	}
 
-	public static State getState() {
-		if (currentState != null) {
-			return currentState;
-		}
-		return blankState;
-	}
-
-	public static void setState(State newState) {
+	public static void setCurrentState(State newState) {
 		currentState = newState;
 	}
 

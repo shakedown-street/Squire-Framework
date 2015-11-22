@@ -2,13 +2,10 @@ package com.squire.api.state;
 
 import java.awt.Graphics;
 
-public abstract class State {
+public interface State {
 	
-	public State() {
-		init();
-	}
+	void init();
+	void process();
+	void render(Graphics g);
 	
-	public abstract void init();
-	public abstract void process();
-	public abstract void render(Graphics g);
 }

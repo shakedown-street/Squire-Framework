@@ -36,7 +36,7 @@ public class Game extends JPanel implements Runnable {
 	 * Updates game state.
 	 */
 	public void process() {
-		StateHandler.getState().process();
+		StateHandler.updateCurrentState();
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class Game extends JPanel implements Runnable {
 	@Override
 	public void paintComponent(Graphics g) {
 		g.clearRect(0, 0, getWidth(), getHeight());
-		StateHandler.getState().render(g);
+		StateHandler.renderCurrentState(g);
 	}
 
 	// desired fps

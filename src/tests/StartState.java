@@ -6,10 +6,10 @@ import java.io.File;
 import com.squire.api.graphics.Sprite;
 import com.squire.api.graphics.SpriteSheet;
 import com.squire.api.listeners.Key;
-import com.squire.api.state.State;
+import com.squire.api.state.AbstractState;
 import com.squire.api.state.StateHandler;
 
-public class StartState extends State {
+public class StartState extends AbstractState {
 
 	private SpriteSheet sheet;
 	private Sprite startBg;
@@ -23,7 +23,7 @@ public class StartState extends State {
 	@Override
 	public void process() {
 		if (Key.keymap[18]) {
-			StateHandler.setState(new PlayState());
+			StateHandler.setCurrentState(new PlayState());
 		}
 	}
 

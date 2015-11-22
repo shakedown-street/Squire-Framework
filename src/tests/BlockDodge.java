@@ -8,7 +8,7 @@ public class BlockDodge {
 	public static void main(String[] args) {
 		Game blocks = new Game(800, 500);
 		
-		StateHandler.setState(new StartState());
+		StateHandler.setCurrentState(new StartState());
 	}
 
 }

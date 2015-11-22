@@ -6,10 +6,10 @@ import java.io.File;
 import com.squire.api.graphics.Sprite;
 import com.squire.api.graphics.SpriteSheet;
 import com.squire.api.listeners.Key;
-import com.squire.api.state.State;
+import com.squire.api.state.AbstractState;
 import com.sun.glass.events.KeyEvent;
 
-public class PlayState extends State {
+public class PlayState extends AbstractState {
 
 	private SpriteSheet sheet;
 	private Sprite gameBg;
