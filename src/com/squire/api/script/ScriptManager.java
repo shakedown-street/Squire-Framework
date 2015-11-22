@@ -8,8 +8,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
 /**
- * Probably going to be scrapped in the future.
- * Currently not being utilized.
+ * Probably going to be scrapped in the future. Currently not being utilized.
  *
  * @author Jordan Price
  *

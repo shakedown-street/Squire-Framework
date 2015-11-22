@@ -4,22 +4,22 @@ import java.awt.Graphics;
 
 public class StateHandler {
 
-	private static State currentState;
+	private State currentState;
 
-	public static void updateCurrentState() {
-		if (currentState != null) {
-			currentState.process();
+	public void setState(State state) {
+		this.currentState = state;
+	}
+
+	public void process() {
+		if (this.currentState != null) {
+			this.currentState.process();
 		}
 	}
 
-	public static void renderCurrentState(Graphics g) {
-		if (currentState != null) {
-			currentState.render(g);
+	public void render(Graphics g) {
+		if (this.currentState != null) {
+			this.currentState.render(g);
 		}
-	}
-
-	public static void setCurrentState(State newState) {
-		currentState = newState;
 	}
 
 }

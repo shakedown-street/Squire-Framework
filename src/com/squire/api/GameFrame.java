@@ -8,7 +8,7 @@ import com.squire.api.listeners.Mouse;
 public class GameFrame {
 
 	private static JFrame frame;
-	
+
 	public static void init(Game game) {
 		frame = new JFrame("Squire");
 

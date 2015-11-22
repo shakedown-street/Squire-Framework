@@ -2,7 +2,10 @@ package com.squire.api.state;
 
 public abstract class AbstractState implements State {
 	
-	public AbstractState() {
+	protected StateHandler stateHandler;
+
+	public AbstractState(StateHandler handler) {
+		stateHandler = handler;
 		init();
 	}
 

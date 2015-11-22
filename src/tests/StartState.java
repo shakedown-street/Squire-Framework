@@ -10,9 +10,13 @@ import com.squire.api.state.AbstractState;
 import com.squire.api.state.StateHandler;
 
 public class StartState extends AbstractState {
-
+	
 	private SpriteSheet sheet;
 	private Sprite startBg;
+	
+	public StartState(StateHandler stateHandler) {
+		super(stateHandler);
+	}
 
 	@Override
 	public void init() {
@@ -23,7 +27,7 @@ public class StartState extends AbstractState {
 	@Override
 	public void process() {
 		if (Key.keymap[18]) {
-			StateHandler.setCurrentState(new PlayState());
+			stateHandler.setState(new PlayState(this.stateHandler));
 		}
 	}
 
