@@ -5,9 +5,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
-import com.squire.api.listeners.Key;
-import com.squire.api.listeners.Mouse;
-
 /**
  * Entry point for the framework. Creating a new instance of the world class
  * will start a frame with the drawing/updating canvas inside of it.
@@ -37,13 +34,13 @@ public abstract class SquireGame extends Canvas implements Runnable {
 		setMinimumSize(new Dimension(canvasWidth, canvasHeight));
 		setSize(new Dimension(canvasWidth, canvasHeight));
 
-		Key key = new Key();
-		Mouse mouse = new Mouse();
-
-		setFocusable(true);
-		addKeyListener(key);
-		addMouseListener(mouse);
-		addMouseMotionListener(mouse);
+//		Key key = new Key();
+//		Mouse mouse = new Mouse();
+//
+//		setFocusable(true);
+//		addKeyListener(key);
+//		addMouseListener(mouse);
+//		addMouseMotionListener(mouse);
 	}
 
 	public abstract void init();
