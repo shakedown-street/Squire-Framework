@@ -13,7 +13,8 @@ public class StartState extends AbstractState {
 
 	@Override
 	public void init() {
-		
+		this.setStatus("test");
+		System.out.println(this.status);
 	}
 
 	@Override
