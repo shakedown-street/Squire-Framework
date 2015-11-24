@@ -1,12 +1,13 @@
 package tests;
 
-import com.squire.api.SquireFrameWrapper;
+import com.squire.api.SquireFrame;
 
 public class Wrapper {
 
+	public static SimpleSkeleton game = new SimpleSkeleton("Simple game", 800, 600);
+	public static SquireFrame frame = new SquireFrame(game);
+
 	public static void main(String[] args) {
-		SimpleSkeleton game = new SimpleSkeleton("Simple game", 800, 600);
-		SquireFrameWrapper frame = new SquireFrameWrapper(game);
 		frame.initialize();
 	}
 }

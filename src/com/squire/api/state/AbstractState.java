@@ -2,31 +2,28 @@ package com.squire.api.state;
 
 public abstract class AbstractState implements State {
 
-	protected String name;
-	protected String status;
-	protected StateHandler stateHandler;
+	private String name;
+	private String status;
+	private int id;
 
-	public AbstractState(String name, StateHandler handler) {
+	public AbstractState(String name) {
 		this.name = name;
-		this.stateHandler = handler;
-		init();
 	}
 	
+	public String getName() {
+		return name;
+	}
+
 	public String getStatus() {
 		return status;
 	}
-	
+
 	public void setStatus(String status) {
 		this.status = this.name + " : " + status;
 	}
 	
-	public void printStatus() {
-		System.out.println(getStatus());
-	}
-	
-	public void alertStatus(String detail) {
-		setStatus(detail);
-		printStatus();
+	public int getID() {
+		return id;
 	}
 
 }

@@ -13,40 +13,44 @@ import com.squire.api.listeners.Mouse;
  * will start a frame with the drawing/updating canvas inside of it.
  *
  * @author Jordan Price
- * 
+ *
  */
 @SuppressWarnings("serial")
 public abstract class SquireGame extends Canvas implements Runnable {
+
+	private Thread thread;
+	private final String title;
+	private int canvasWidth, canvasHeight;
+	private final int buffers = 2;
+
+	private SquireEngine engine;
 
 	private final static int MAX_FPS = 30;
 	private final static int MAX_FRAME_SKIPS = 5;
 	private final static int FRAME_PERIOD = 1000 / MAX_FPS;
 
-	private final String name;
-	private int width, height;
+	public SquireGame(String title, int canvasWidth, int canvasHeight) {
+		this.title = title;
+		this.canvasWidth = canvasWidth;
+		this.canvasHeight = canvasHeight;
 
-	private SquireEngine engine;
-
-	public SquireGame(String name, int width, int height) {
-		this.name = name;
-		this.width = width;
-		this.height = height;
-		
-		setMinimumSize(new Dimension(width, height));
-		setSize(new Dimension(width, height));
+		setMinimumSize(new Dimension(canvasWidth, canvasHeight));
+		setSize(new Dimension(canvasWidth, canvasHeight));
 
 		Key key = new Key();
 		Mouse mouse = new Mouse();
 
+		setFocusable(true);
 		addKeyListener(key);
 		addMouseListener(mouse);
 		addMouseMotionListener(mouse);
 	}
-	
+
 	public abstract void init();
 
 	@Override
 	public void run() {
+		init();
 
 		long beginTime;
 		long timeDiff;
@@ -87,37 +91,43 @@ public abstract class SquireGame extends Canvas implements Runnable {
 			}
 		}
 	}
-	
-	protected void start() {
-		Thread thread = new Thread(this);
-		thread.setPriority(Thread.MAX_PRIORITY);
-		thread.start();
-		init();
-	}
 
 	private void process() {
-		getEngine().getStateHandler().process();
+		getEngine().getStateHandler().processState();
 	}
 
 	private void render() {
 		BufferStrategy bs = this.getBufferStrategy();
 
 		if (bs == null) {
-			createBufferStrategy(2);
+			createBufferStrategy(buffers);
+			requestFocus();
 			return;
 		}
 
 		Graphics g = bs.getDrawGraphics();
-		g.clearRect(0, 0, width, height);
-
-		getEngine().getStateHandler().render(g);
+		getEngine().getStateHandler().renderState(g);
 
 		g.dispose();
 		bs.show();
 	}
 
-	public String getName() {
-		return name;
+	protected void start() {
+		thread = new Thread(this);
+		thread.setPriority(Thread.MAX_PRIORITY);
+		thread.start();
+	}
+
+	public int getCanvasWidth() {
+		return canvasWidth;
+	}
+
+	public int getCanvasHeight() {
+		return canvasHeight;
+	}
+
+	public String getTitle() {
+		return title;
 	}
 
 	public SquireEngine getEngine() {

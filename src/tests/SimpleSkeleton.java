@@ -12,7 +12,6 @@ public class SimpleSkeleton extends SquireGame {
 	@Override
 	public void init() {
 		String[] choices = { "Play", "Options", "Exit" };
-		getEngine().getStateHandler().setState(new StartState("start_state",
-				choices, getEngine().getStateHandler()));
+		getEngine().getStateHandler().setState(new StartState("start_state", choices));
 	}
 }
