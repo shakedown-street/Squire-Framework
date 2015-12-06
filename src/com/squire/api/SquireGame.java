@@ -109,7 +109,7 @@ public abstract class SquireGame extends Canvas implements Runnable {
 		bs.show();
 	}
 
-	protected void start() {
+	public void start() {
 		thread = new Thread(this);
 		thread.setPriority(Thread.MAX_PRIORITY);
 		thread.start();

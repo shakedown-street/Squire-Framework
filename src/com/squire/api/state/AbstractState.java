@@ -2,8 +2,8 @@ package com.squire.api.state;
 
 public abstract class AbstractState implements State {
 
-	protected String name;
-	protected String status;
+	private String name;
+	private String status;
 
 	public AbstractState(String name) {
 		this.name = name;
@@ -18,7 +18,11 @@ public abstract class AbstractState implements State {
 	}
 
 	public void setStatus(String status) {
-		this.status = this.name + " : " + status;
+		this.status = getName() + " : " + status;
+	}
+	
+	public void printStatus() {
+		System.out.println(getStatus());
 	}
 
 }

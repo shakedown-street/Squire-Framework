@@ -13,13 +13,15 @@ public class StartState extends AbstractState {
 
 	@Override
 	public void init() {
-		this.setStatus("test");
-		System.out.println(this.status);
+		setStatus("initialized");
+		printStatus();
 	}
+	
+	int processCount = 0;
+	int renderCount = 0;
 
 	@Override
 	public void process() {
-		
 	}
 
 	@Override
