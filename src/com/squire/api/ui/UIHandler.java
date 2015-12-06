@@ -1,32 +1,28 @@
 package com.squire.api.ui;
 
 import java.awt.Graphics;
-import java.util.ArrayList;
 
 public class UIHandler {
 	
-	private ArrayList<UIObject> uiObjs;
+	private UILayout layout;
 	
 	public UIHandler() {
-		uiObjs = new ArrayList<UIObject>();
+		
 	}
 	
-	public void render(Graphics g) {
-		for (UIObject obj : uiObjs) {
-			obj.render(g);
+	public void renderUI(Graphics g) {
+		if (layout == null) {
+			System.out.println("Invalid layout");
 		}
+		layout.renderLayout(g);
 	}
 	
-	public void addObject(UIObject obj) {
-		uiObjs.add(obj);
+	public UILayout getLayout() {
+		return layout;
 	}
 	
-	public void removeObject(UIObject obj) {
-		uiObjs.remove(obj);
-	}
-	
-	public ArrayList<UIObject> getObjects() {
-		return uiObjs;
+	public void setLayout(UILayout layout) {
+		this.layout = layout;
 	}
 
 }

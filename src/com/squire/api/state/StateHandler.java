@@ -4,7 +4,7 @@ import java.awt.Graphics;
 
 public class StateHandler {
 
-	private AbstractState currentState;
+	private State currentState;
 
 	public void processState() {
 		if (this.currentState != null) {
@@ -15,11 +15,11 @@ public class StateHandler {
 	public void renderState(Graphics g) {
 		if (this.currentState != null) {
 			this.currentState.render(g);
-			this.currentState.getUIHandler().render(g);
+			this.currentState.getUIHandler().renderUI(g);
 		}
 	}
 	
-	public AbstractState getState() {
+	public State getState() {
 		return currentState;
 	}
 

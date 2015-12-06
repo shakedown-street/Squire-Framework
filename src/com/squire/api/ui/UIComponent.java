@@ -4,12 +4,12 @@ import java.awt.Graphics;
 
 import com.squire.api.graphics.Sprite;
 
-public abstract class UIObject {
+public abstract class UIComponent {
 	
 	private Sprite sprite;
 	private int x, y, w, h;
 	
-	public UIObject(Sprite sprite, int x, int y, int w, int h) {
+	public UIComponent(Sprite sprite, int x, int y, int w, int h) {
 		this.sprite = sprite;
 		this.x = x;
 		this.y = y;
@@ -17,11 +17,7 @@ public abstract class UIObject {
 		this.h = h;
 	}
 	
-	public abstract void draw(Graphics g);
-	
-	public void render(Graphics g) {
-		draw(g);
-	}
+	public abstract void renderComponent(Graphics g);
 	
 	public Sprite getSprite() {
 		return sprite;
