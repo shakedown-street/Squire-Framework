@@ -6,10 +6,6 @@ public class UIHandler {
 	
 	private UILayout layout;
 	
-	public UIHandler() {
-		
-	}
-	
 	public void renderUI(Graphics g) {
 		if (layout == null) {
 			System.out.println("Invalid layout");

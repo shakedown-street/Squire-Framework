@@ -12,10 +12,6 @@ public abstract class AbstractState implements State {
 		this.name = name;
 	}
 	
-	public void init() {
-		
-	}
-	
 	public UIHandler getUIHandler() {
 		if (uiHandler == null) {
 			uiHandler = new UIHandler();
