@@ -20,6 +20,7 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	private int canvasWidth, canvasHeight;
 	private final int buffers = 3;
 
+	private SquireGame instance;
 	private SquireEngine engine;
 
 	private final static int MAX_FPS = 30;
@@ -48,6 +49,7 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	@Override
 	public void run() {
 		init();
+		instance = this;
 
 		long beginTime;
 		long timeDiff;
@@ -113,6 +115,10 @@ public abstract class SquireGame extends Canvas implements Runnable {
 		thread = new Thread(this);
 		thread.setPriority(Thread.MAX_PRIORITY);
 		thread.start();
+	}
+	
+	public SquireGame getGame() {
+		return instance;
 	}
 
 	public int getCanvasWidth() {
