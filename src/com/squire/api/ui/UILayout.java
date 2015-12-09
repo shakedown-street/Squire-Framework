@@ -11,17 +11,30 @@ public abstract class UILayout {
 		components = new ArrayList<UIComponent>();
 	}
 	
+	public abstract void initLayout();
+	
 	public void renderLayout(Graphics g) {
-		for (UIComponent comp : components) {
-			comp.renderComponent(g);
+		for (UIComponent component : components) {
+			component.renderComponent(g);
 		}
 	}
 	
-	public void addComponent(UIComponent component) {
-		components.add(component);
+	public void addComponent(UIComponent c) {
+		components.add(c);
+	}
+	
+	public void addComponents(UIComponent...uiComponents) {
+		for (UIComponent c : uiComponents) {
+			this.components.add(c);
+		}
+	}
+	
+	public ArrayList<UIComponent> getComponents() {
+		return components;
+	}
+	
+	public void setComponents(ArrayList<UIComponent> components) {
+		this.components = components;
 	}
 
-	public void removeComponent(UIComponent component) {
-		components.remove(component);
-	}
 }

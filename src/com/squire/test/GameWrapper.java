@@ -2,11 +2,11 @@ package com.squire.test;
 
 import com.squire.api.SquireFrame;
 
-public class Launcher {
+public class GameWrapper {
 	
-	private static SpaceShooter game = new SpaceShooter(
+	public static SpaceShooter game = new SpaceShooter(
 			"Space Shooter", 840, 500);
-	private static SquireFrame frame = new SquireFrame(game);
+	public static SquireFrame frame = new SquireFrame(game);
 	
 	public static void main(String[] args) {
 		frame.initialize();

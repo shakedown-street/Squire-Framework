@@ -3,7 +3,7 @@ package com.squire.test.states;
 import java.awt.Graphics;
 
 import com.squire.api.state.AbstractState;
-import com.squire.test.layouts.StartLayout;
+import com.squire.api.ui.UILayout;
 
 public class StartState extends AbstractState {
 
@@ -11,9 +11,13 @@ public class StartState extends AbstractState {
 		super(name);
 	}
 
+	public StartState(String name, UILayout layout) {
+		super(name, layout);
+	}
+
 	@Override
 	public void init() {
-		getUIHandler().setLayout(new StartLayout());
+		
 	}
 
 	@Override

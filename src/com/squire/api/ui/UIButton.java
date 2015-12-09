@@ -1,7 +1,5 @@
 package com.squire.api.ui;
 
-import java.awt.Graphics;
-
 import com.squire.api.graphics.Sprite;
 
 public abstract class UIButton extends UIComponent
@@ -9,11 +7,6 @@ public abstract class UIButton extends UIComponent
 
 	public UIButton(Sprite sprite, int x, int y, int w, int h) {
 		super(sprite, x, y, w, h);
-	}
-
-	@Override
-	public void renderComponent(Graphics g) {
-		getSprite().draw(g, getX(), getY(), getWidth(), getHeight());
 	}
 
 }

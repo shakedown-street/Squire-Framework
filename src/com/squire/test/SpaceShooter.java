@@ -1,6 +1,7 @@
 package com.squire.test;
 
 import com.squire.api.SquireGame;
+import com.squire.test.layouts.StartLayout;
 import com.squire.test.states.StartState;
 
 @SuppressWarnings("serial")
@@ -12,7 +13,8 @@ public class SpaceShooter extends SquireGame {
 
 	@Override
 	public void init() {
-		getEngine().getStateHandler().setState(new StartState("start_state"));
+		getEngine().getStateHandler().setState(new StartState(
+				"start_state", new StartLayout()));
 	}
 
 }

@@ -6,9 +6,18 @@ public class UIHandler {
 	
 	private UILayout layout;
 	
+	public UIHandler() {
+		layout = null;
+	}
+	
+	public UIHandler(UILayout layout) {
+		super();
+		this.layout = layout;
+	}
+	
 	public void renderUI(Graphics g) {
 		if (layout == null) {
-			System.out.println("Invalid layout");
+			return;
 		}
 		layout.renderLayout(g);
 	}
@@ -19,6 +28,7 @@ public class UIHandler {
 	
 	public void setLayout(UILayout layout) {
 		this.layout = layout;
+		this.layout.initLayout();
 	}
 
 }

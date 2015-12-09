@@ -18,7 +18,7 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	private Thread thread;
 	private final String title;
 	private int canvasWidth, canvasHeight;
-	private final int buffers = 2;
+	private final int buffers = 3;
 
 	private SquireEngine engine;
 

@@ -1,6 +1,7 @@
 package com.squire.api.state;
 
 import com.squire.api.ui.UIHandler;
+import com.squire.api.ui.UILayout;
 
 public abstract class AbstractState implements State {
 
@@ -10,6 +11,11 @@ public abstract class AbstractState implements State {
 
 	public AbstractState(String name) {
 		this.name = name;
+	}
+	
+	public AbstractState(String name, UILayout layout) {
+		super();
+		getUIHandler().setLayout(layout);
 	}
 	
 	public UIHandler getUIHandler() {
