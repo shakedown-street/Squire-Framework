@@ -5,30 +5,22 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class SquireFrame {
-
-	private JFrame frame;
-
-	private SquireGame game;
-
+@SuppressWarnings("serial")
+public class SquireFrame extends JFrame {
+	
 	public SquireFrame(SquireGame game) {
-		frame = new JFrame();
-		this.game = game;
+		super();
 
 		JPanel root = new JPanel(new BorderLayout());
-		root.add(game, BorderLayout.CENTER);
-		frame.getContentPane().add(root);
+		root.add(game.getCanvas(), BorderLayout.CENTER);
+		getContentPane().add(root);
 
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setResizable(false);
-		frame.setTitle(game.getTitle());
-		frame.pack();
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
+		pack();
+		
+		setLocationRelativeTo(null);
+		setVisible(true);
 	}
-
-	public void initialize() {
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
-		game.start();
-	}
-
+	
 }

@@ -1,13 +1,13 @@
 package com.squire.api.state;
 
-import com.squire.api.ui.UIHandler;
 import com.squire.api.ui.UILayout;
+import com.squire.api.ui.UIManager;
 
 public abstract class AbstractState implements State {
 
 	private String name;
 	private String status;
-	private UIHandler uiHandler;
+	private UIManager uiHandler;
 
 	public AbstractState(String name) {
 		this.name = name;
@@ -15,12 +15,12 @@ public abstract class AbstractState implements State {
 	
 	public AbstractState(String name, UILayout layout) {
 		super();
-		getUIHandler().setLayout(layout);
+		getUIManager().setLayout(layout);
 	}
 	
-	public UIHandler getUIHandler() {
+	public UIManager getUIManager() {
 		if (uiHandler == null) {
-			uiHandler = new UIHandler();
+			uiHandler = new UIManager();
 		}
 		return uiHandler;
 	}

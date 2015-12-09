@@ -15,7 +15,7 @@ public class StateHandler {
 	public void renderState(Graphics g) {
 		if (this.currentState != null) {
 			this.currentState.render(g);
-			this.currentState.getUIHandler().renderUI(g);
+			this.currentState.getUIManager().renderUI(g);
 		}
 	}
 	
@@ -23,7 +23,7 @@ public class StateHandler {
 		return currentState;
 	}
 
-	public void setState(AbstractState state) {
+	public void setState(State state) {
 		this.currentState = state;
 		this.currentState.init();
 	}

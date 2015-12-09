@@ -1,10 +1,5 @@
 package com.squire.api;
 
-import java.awt.Canvas;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.image.BufferStrategy;
-
 /**
  * Entry point for the framework. Creating a new instance of the world class
  * will start a frame with the drawing/updating canvas inside of it.
@@ -12,16 +7,17 @@ import java.awt.image.BufferStrategy;
  * @author Jordan Price
  *
  */
-@SuppressWarnings("serial")
-public abstract class SquireGame extends Canvas implements Runnable {
+
+public abstract class SquireGame implements Runnable {
 
 	private Thread thread;
-	private final String title;
-	private int canvasWidth, canvasHeight;
-	private final int buffers = 3;
-
-	private SquireGame instance;
+	private String title;
+	
 	private SquireEngine engine;
+	private SquireCanvas canvas;
+	private SquireFrame frame;
+	
+	private int canvasWidth, canvasHeight;
 
 	private final static int MAX_FPS = 30;
 	private final static int MAX_FRAME_SKIPS = 5;
@@ -31,26 +27,19 @@ public abstract class SquireGame extends Canvas implements Runnable {
 		this.title = title;
 		this.canvasWidth = canvasWidth;
 		this.canvasHeight = canvasHeight;
-
-		setMinimumSize(new Dimension(canvasWidth, canvasHeight));
-		setSize(new Dimension(canvasWidth, canvasHeight));
-
-//		Key key = new Key();
-//		Mouse mouse = new Mouse();
-//
-//		setFocusable(true);
-//		addKeyListener(key);
-//		addMouseListener(mouse);
-//		addMouseMotionListener(mouse);
+		init();
 	}
 
-	public abstract void init();
+	private void init() {
+		this.engine = new SquireEngine(this);
+		this.canvas = new SquireCanvas(this);
+		this.frame = new SquireFrame(this);
+		
+		start();
+	}
 
 	@Override
 	public void run() {
-		init();
-		instance = this;
-
 		long beginTime;
 		long timeDiff;
 		int sleepTime;
@@ -63,11 +52,9 @@ public abstract class SquireGame extends Canvas implements Runnable {
 				beginTime = System.currentTimeMillis();
 				framesSkipped = 0;
 
-				// update game state
-				process();
+				engine.process();
 
-				// render state to the screen
-				render();
+				canvas.render();
 
 				timeDiff = System.currentTimeMillis() - beginTime;
 				sleepTime = (int) (FRAME_PERIOD - timeDiff);
@@ -81,7 +68,7 @@ public abstract class SquireGame extends Canvas implements Runnable {
 				}
 
 				while (sleepTime < 0 && framesSkipped < MAX_FRAME_SKIPS) {
-					process();
+					engine.process();
 					sleepTime += FRAME_PERIOD;
 					framesSkipped++;
 				}
@@ -91,42 +78,10 @@ public abstract class SquireGame extends Canvas implements Runnable {
 		}
 	}
 
-	private void process() {
-		getEngine().getStateHandler().processState();
-	}
-
-	private void render() {
-		BufferStrategy bs = this.getBufferStrategy();
-
-		if (bs == null) {
-			createBufferStrategy(buffers);
-			requestFocus();
-			return;
-		}
-
-		Graphics g = bs.getDrawGraphics();
-		getEngine().getStateHandler().renderState(g);
-
-		g.dispose();
-		bs.show();
-	}
-
 	public void start() {
 		thread = new Thread(this);
 		thread.setPriority(Thread.MAX_PRIORITY);
 		thread.start();
-	}
-	
-	public SquireGame getGame() {
-		return instance;
-	}
-
-	public int getCanvasWidth() {
-		return canvasWidth;
-	}
-
-	public int getCanvasHeight() {
-		return canvasHeight;
 	}
 
 	public String getTitle() {
@@ -134,10 +89,23 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	}
 
 	public SquireEngine getEngine() {
-		if (engine == null) {
-			engine = new SquireEngine();
-		}
 		return engine;
+	}
+	
+	public SquireCanvas getCanvas() {
+		return canvas;
+	}
+	
+	public SquireFrame getFrame() {
+		return frame;
+	}
+	
+	public int getCanvasWidth() {
+		return canvasWidth;
+	}
+	
+	public int getCanvasHeight() {
+		return canvasHeight;
 	}
 
 }

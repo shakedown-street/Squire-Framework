@@ -2,7 +2,7 @@ package com.squire.api.state;
 
 import java.awt.Graphics;
 
-import com.squire.api.ui.UIHandler;
+import com.squire.api.ui.UIManager;
 
 public interface State {
 
@@ -12,6 +12,6 @@ public interface State {
 
 	void render(Graphics g);
 	
-	UIHandler getUIHandler();
+	UIManager getUIManager();
 
 }

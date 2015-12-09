@@ -1,0 +1,13 @@
+Squire API Documentation
+
+(a) - abstract
+(i) - interface
+
+Game(a)
+	Engine
+		StateHandler
+			State (i)
+				process and render
+				UIManager
+	Canvas
+		

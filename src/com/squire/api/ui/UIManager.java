@@ -2,15 +2,15 @@ package com.squire.api.ui;
 
 import java.awt.Graphics;
 
-public class UIHandler {
+public class UIManager {
 	
 	private UILayout layout;
 	
-	public UIHandler() {
+	public UIManager() {
 		layout = null;
 	}
 	
-	public UIHandler(UILayout layout) {
+	public UIManager(UILayout layout) {
 		super();
 		this.layout = layout;
 	}
