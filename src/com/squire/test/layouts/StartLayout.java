@@ -6,6 +6,7 @@ import com.squire.api.graphics.Sprite;
 import com.squire.api.graphics.SpriteSheet;
 import com.squire.api.ui.UILayout;
 import com.squire.test.components.PlayButton;
+import com.squire.test.components.StartBackground;
 
 public class StartLayout extends UILayout {
 
@@ -19,6 +20,7 @@ public class StartLayout extends UILayout {
 
 	@Override
 	public void initLayout() {
+		addComponent(new StartBackground());
 		addComponent(new PlayButton());
 	}
 

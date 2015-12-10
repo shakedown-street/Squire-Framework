@@ -22,6 +22,6 @@ public class PlayButton extends UIButton {
 
 	@Override
 	public void renderComponent(Graphics g) {
-		buttonSprite.draw(g, 0, 0);
+		buttonSprite.render(g, 0, 0);
 	}
 }

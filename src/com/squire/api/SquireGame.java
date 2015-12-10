@@ -20,8 +20,6 @@ public abstract class SquireGame implements Runnable {
 	private int canvasWidth, canvasHeight;
 
 	private final static int MAX_FPS = 30;
-	private final static int MAX_FRAME_SKIPS = 5;
-	private final static int FRAME_PERIOD = 1000 / MAX_FPS;
 
 	public SquireGame(String title, int canvasWidth, int canvasHeight) {
 		this.title = title;
@@ -31,49 +29,48 @@ public abstract class SquireGame implements Runnable {
 	}
 
 	private void init() {
-		this.engine = new SquireEngine(this);
-		this.canvas = new SquireCanvas(this);
-		this.frame = new SquireFrame(this);
+		engine = new SquireEngine(this);
+		canvas = new SquireCanvas(this);
+		frame = new SquireFrame(this);
 
 		start();
+		onInit();
 	}
+	
+	public abstract void onInit();
 
 	@Override
 	public void run() {
-		long beginTime;
-		long timeDiff;
-		int sleepTime;
-		int framesSkipped;
-
-		sleepTime = 0;
-
+		long lastFPSTime = System.currentTimeMillis();
+		int fps = 0;
+		long then = System.nanoTime();
+		double unprocessed = 0d;
+		double nsPerFrame = 1000000000.0d / MAX_FPS;
 		while (true) {
-			try {
-				beginTime = System.currentTimeMillis();
-				framesSkipped = 0;
-
+			long now = System.nanoTime();
+			unprocessed += (now - then) / nsPerFrame;
+			then = now;
+			boolean canRender = false;
+			while (unprocessed >= 1) {
 				engine.process();
+				canRender = true;
+				unprocessed -= 1;
+			}
 
-				canvas.render();
-
-				timeDiff = System.currentTimeMillis() - beginTime;
-				sleepTime = (int) (FRAME_PERIOD - timeDiff);
-
-				if (sleepTime > 0) {
-					try {
-						Thread.sleep(sleepTime);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-
-				while (sleepTime < 0 && framesSkipped < MAX_FRAME_SKIPS) {
-					engine.process();
-					sleepTime += FRAME_PERIOD;
-					framesSkipped++;
-				}
-			} catch (Exception e) {
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
 				e.printStackTrace();
+			}
+
+			if (canRender) {
+				canvas.render();
+				fps++;
+			}
+			if (System.currentTimeMillis() - lastFPSTime > 1000) {
+				System.out.printf("%d FPS\n", fps);
+				lastFPSTime = System.currentTimeMillis();
+				fps = 0;
 			}
 		}
 	}

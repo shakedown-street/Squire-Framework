@@ -17,6 +17,7 @@ public class StateHandler {
 		if (currentState == null) {
 			return;
 		}
+		currentState.getUIManager().renderUI(g);
 		currentState.render(g);
 	}
 

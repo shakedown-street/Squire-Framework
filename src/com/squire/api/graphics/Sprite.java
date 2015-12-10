@@ -42,11 +42,11 @@ public class Sprite {
 		this.img = sheet.getSprite(x, y, w, h).getImg();
 	}
 
-	public void draw(Graphics g, int x, int y) {
+	public void render(Graphics g, int x, int y) {
 		g.drawImage(getImg(), x, y, null);
 	}
 
-	public void draw(Graphics g, int x, int y, int w, int h) {
+	public void render(Graphics g, int x, int y, int w, int h) {
 		g.drawImage(getImg(), x, y, w, h, null);
 	}
 

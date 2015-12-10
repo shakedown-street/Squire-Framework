@@ -1,5 +1,6 @@
 package com.squire.api.state;
 
+import com.squire.api.SquireGame;
 import com.squire.api.ui.UILayout;
 import com.squire.api.ui.UIManager;
 
@@ -8,16 +9,22 @@ public abstract class AbstractState implements State {
 	private String name;
 	private String status;
 	private UIManager uiManager;
+	private SquireGame game;
 
-	public AbstractState(String name) {
+	public AbstractState(SquireGame game, String name) {
+		this.game = game;
 		this.name = name;
 		this.status = "";
 		this.uiManager = new UIManager();
 	}
 
-	public AbstractState(String name, UILayout layout) {
-		this(name);
+	public AbstractState(SquireGame game, String name, UILayout layout) {
+		this(game, name);
 		getUIManager().setUILayout(layout);
+	}
+	
+	public SquireGame getGame() {
+		return game;
 	}
 
 	public String getName() {
@@ -25,11 +32,11 @@ public abstract class AbstractState implements State {
 	}
 
 	public String getStatus() {
-		return status;
+		return getName() + " : " + status;
 	}
 
 	public void setStatus(String status) {
-		this.status = getName() + " : " + status;
+		this.status = status;
 	}
 
 	public void printStatus() {
