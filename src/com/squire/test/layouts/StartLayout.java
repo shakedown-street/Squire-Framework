@@ -19,7 +19,7 @@ public class StartLayout extends UILayout {
 
 	@Override
 	public void initLayout() {
-		addComponent(new PlayButton(button00, 800 / 3, 150, 190, 49));
+		addComponent(new PlayButton());
 	}
 
 }

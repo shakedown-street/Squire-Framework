@@ -7,24 +7,19 @@ public abstract class AbstractState implements State {
 
 	private String name;
 	private String status;
-	private UIManager uiHandler;
+	private UIManager uiManager;
 
 	public AbstractState(String name) {
 		this.name = name;
+		this.status = "";
+		this.uiManager = new UIManager();
 	}
-	
+
 	public AbstractState(String name, UILayout layout) {
-		super();
-		getUIManager().setLayout(layout);
+		this(name);
+		getUIManager().setUILayout(layout);
 	}
-	
-	public UIManager getUIManager() {
-		if (uiHandler == null) {
-			uiHandler = new UIManager();
-		}
-		return uiHandler;
-	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -36,9 +31,13 @@ public abstract class AbstractState implements State {
 	public void setStatus(String status) {
 		this.status = getName() + " : " + status;
 	}
-	
+
 	public void printStatus() {
 		System.out.println(getStatus());
+	}
+
+	public UIManager getUIManager() {
+		return uiManager;
 	}
 
 }

@@ -17,17 +17,17 @@ public class StartState extends AbstractState {
 
 	@Override
 	public void init() {
-		
+
 	}
 
 	@Override
 	public void process() {
-		
+
 	}
 
 	@Override
 	public void render(Graphics g) {
-		
+
 	}
 
 }

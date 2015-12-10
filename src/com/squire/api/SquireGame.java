@@ -12,11 +12,11 @@ public abstract class SquireGame implements Runnable {
 
 	private Thread thread;
 	private String title;
-	
+
 	private SquireEngine engine;
 	private SquireCanvas canvas;
 	private SquireFrame frame;
-	
+
 	private int canvasWidth, canvasHeight;
 
 	private final static int MAX_FPS = 30;
@@ -34,7 +34,7 @@ public abstract class SquireGame implements Runnable {
 		this.engine = new SquireEngine(this);
 		this.canvas = new SquireCanvas(this);
 		this.frame = new SquireFrame(this);
-		
+
 		start();
 	}
 
@@ -91,19 +91,19 @@ public abstract class SquireGame implements Runnable {
 	public SquireEngine getEngine() {
 		return engine;
 	}
-	
+
 	public SquireCanvas getCanvas() {
 		return canvas;
 	}
-	
+
 	public SquireFrame getFrame() {
 		return frame;
 	}
-	
+
 	public int getCanvasWidth() {
 		return canvasWidth;
 	}
-	
+
 	public int getCanvasHeight() {
 		return canvasHeight;
 	}

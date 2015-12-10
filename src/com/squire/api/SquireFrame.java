@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class SquireFrame extends JFrame {
-	
+
 	public SquireFrame(SquireGame game) {
 		super();
 
@@ -19,8 +19,9 @@ public class SquireFrame extends JFrame {
 		setResizable(false);
 		pack();
 		
+		setTitle(game.getTitle());
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
-	
+
 }
