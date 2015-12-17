@@ -1,7 +1,6 @@
 package com.squire.test;
 
 import com.squire.api.SquireGame;
-import com.squire.test.layouts.StartLayout;
 import com.squire.test.states.StartState;
 
 public class SpaceShooter extends SquireGame {
@@ -15,9 +14,9 @@ public class SpaceShooter extends SquireGame {
 	}
 
 	@Override
-	public void onInit() {
-		getEngine().getStateHandler().setState(
-				new StartState(this, "start_state", new StartLayout()));
+	public void init() {
+		getEngine().getStateManager().setState(
+				new StartState(this, "start_state"));
 	}
 
 }

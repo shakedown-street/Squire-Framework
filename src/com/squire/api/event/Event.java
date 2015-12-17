@@ -1,5 +1,9 @@
 package com.squire.api.event;
 
-public class Event {
-
+public interface Event {
+	
+	void init();
+	
+	void execute();
+	
 }

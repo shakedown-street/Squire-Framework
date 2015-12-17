@@ -1,21 +1,36 @@
 package com.squire.api;
 
-import com.squire.api.state.StateHandler;
+import com.squire.api.event.EventManager;
+import com.squire.api.state.StateManager;
+import com.squire.api.ui.UIManager;
 
 public class SquireEngine {
 
-	private StateHandler stateHandler;
+	private EventManager eventManager;
+	private StateManager stateManager;
+	private UIManager uiManager;
 
 	public SquireEngine(SquireGame game) {
-		stateHandler = new StateHandler();
+		eventManager = new EventManager();
+		stateManager = new StateManager();
+		uiManager = new UIManager();
 	}
 
 	public void process() {
-		stateHandler.processState();
+		eventManager.process();
+		stateManager.processState();
+	}
+	
+	public EventManager getEventManager() {
+		return eventManager;
 	}
 
-	public StateHandler getStateHandler() {
-		return stateHandler;
+	public StateManager getStateManager() {
+		return stateManager;
+	}
+	
+	public UIManager getUIManager() {
+		return uiManager;
 	}
 
 }

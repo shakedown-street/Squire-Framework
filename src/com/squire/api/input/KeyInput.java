@@ -33,5 +33,9 @@ public class KeyInput implements KeyListener {
 	public void keyTyped(KeyEvent e) {
 		
 	}
+	
+	public SquireGame getGame() {
+		return game;
+	}
 
 }

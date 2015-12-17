@@ -10,11 +10,6 @@ public class UIManager {
 		layout = null;
 	}
 
-	public UIManager(UILayout layout) {
-		super();
-		this.layout = layout;
-	}
-
 	public void renderUI(Graphics g) {
 		if (layout == null) {
 			System.out.println("null layout");

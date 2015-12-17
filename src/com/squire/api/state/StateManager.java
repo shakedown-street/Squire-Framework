@@ -2,9 +2,13 @@ package com.squire.api.state;
 
 import java.awt.Graphics;
 
-public class StateHandler {
+public class StateManager {
 
-	private AbstractState currentState;
+	private State currentState;
+	
+	public StateManager() {
+		currentState = null;
+	}
 
 	public void processState() {
 		if (currentState == null) {
@@ -17,15 +21,14 @@ public class StateHandler {
 		if (currentState == null) {
 			return;
 		}
-		currentState.getUIManager().renderUI(g);
 		currentState.render(g);
 	}
 
-	public AbstractState getState() {
+	public State getState() {
 		return currentState;
 	}
 
-	public void setState(AbstractState state) {
+	public void setState(State state) {
 		this.currentState = state;
 		this.currentState.init();
 	}

@@ -19,25 +19,25 @@ public abstract class SquireGame implements Runnable {
 
 	private int canvasWidth, canvasHeight;
 
-	private final static int MAX_FPS = 30;
+	public final static int MAX_FPS = 30;
 
 	public SquireGame(String title, int canvasWidth, int canvasHeight) {
 		this.title = title;
 		this.canvasWidth = canvasWidth;
 		this.canvasHeight = canvasHeight;
-		init();
+		initGame();
 	}
 
-	private void init() {
+	private void initGame() {
 		engine = new SquireEngine(this);
 		canvas = new SquireCanvas(this);
 		frame = new SquireFrame(this);
 
 		start();
-		onInit();
+		init();
 	}
 	
-	public abstract void onInit();
+	public abstract void init();
 
 	@Override
 	public void run() {

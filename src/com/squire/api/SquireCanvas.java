@@ -42,7 +42,8 @@ public class SquireCanvas extends Canvas {
 
 		Graphics g = bs.getDrawGraphics();
 		g.clearRect(0, 0, game.getCanvasWidth(), game.getCanvasHeight());
-		game.getEngine().getStateHandler().renderState(g);
+		game.getEngine().getStateManager().renderState(g);
+		game.getEngine().getUIManager().renderUI(g);
 
 		g.dispose();
 		bs.show();
