@@ -7,30 +7,31 @@ public class StateManager {
 	private State currentState;
 	
 	public StateManager() {
-		currentState = null;
+	
 	}
 
 	public void processState() {
 		if (currentState == null) {
 			return;
 		}
-		currentState.process();
+		
+		try {
+			currentState.process();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void renderState(Graphics g) {
 		if (currentState == null) {
 			return;
 		}
-		currentState.render(g);
-	}
-
-	public State getState() {
-		return currentState;
-	}
-
-	public void setState(State state) {
-		this.currentState = state;
-		this.currentState.init();
+		
+		try {
+			currentState.render(g);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

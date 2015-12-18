@@ -19,7 +19,7 @@ public class SquireFrame extends JFrame {
 		setResizable(false);
 		pack();
 		
-		setTitle(game.getTitle());
+		// setTitle(game.getTitle());
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}

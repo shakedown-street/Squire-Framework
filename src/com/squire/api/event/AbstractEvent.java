@@ -3,8 +3,6 @@ package com.squire.api.event;
 import com.squire.api.SquireGame;
 
 /**
- * Executes certain events at a specified time interval.
- * 
  * @author Jordan Price
  */
 

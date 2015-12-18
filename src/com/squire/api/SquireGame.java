@@ -1,8 +1,13 @@
 package com.squire.api;
 
+import com.squire.api.event.EventManager;
+import com.squire.api.state.StateManager;
+import com.squire.api.ui.InterfaceManager;
+
 /**
- * Entry point for the framework. Creating a new instance of the world class
- * will start a frame with the drawing/updating canvas inside of it.
+ * Squire: An open source game framework.
+ * 
+ * Use however you'd like.
  *
  * @author Jordan Price
  *
@@ -11,33 +16,38 @@ package com.squire.api;
 public abstract class SquireGame implements Runnable {
 
 	private Thread thread;
-	private String title;
-
-	private SquireEngine engine;
-	private SquireCanvas canvas;
-	private SquireFrame frame;
-
-	private int canvasWidth, canvasHeight;
 
 	public final static int MAX_FPS = 9999;
+	
+	private EventManager eventManager;
+	private StateManager stateManager;
+	private InterfaceManager uiManager;
+	
+	private SquireCanvas canvas;
+	private int width, height;
+	private SquireFrame frame;
 
-	public SquireGame(String title, int canvasWidth, int canvasHeight) {
-		this.title = title;
-		this.canvasWidth = canvasWidth;
-		this.canvasHeight = canvasHeight;
-		initGame();
+	public SquireGame(int width, int height) {
+		this.width = width;
+		this.height = height;
+		load();
 	}
-
-	private void initGame() {
-		engine = new SquireEngine(this);
+	
+	private void load() {
+		eventManager = new EventManager();
+		stateManager = new StateManager();
+		uiManager = new InterfaceManager();
 		canvas = new SquireCanvas(this);
 		frame = new SquireFrame(this);
-
 		start();
-		init();
 	}
 	
 	public abstract void init();
+	
+	private void process() {
+		eventManager.process();
+		stateManager.processState();
+	}
 
 	@Override
 	public void run() {
@@ -52,7 +62,7 @@ public abstract class SquireGame implements Runnable {
 			then = now;
 			boolean canRender = false;
 			while (unprocessed >= 1) {
-				engine.process();
+				process();
 				canRender = true;
 				unprocessed -= 1;
 			}
@@ -79,30 +89,35 @@ public abstract class SquireGame implements Runnable {
 		thread = new Thread(this);
 		thread.setPriority(Thread.MAX_PRIORITY);
 		thread.start();
+		init();
 	}
-
-	public String getTitle() {
-		return title;
+	
+	public EventManager getEventManager() {
+		return eventManager;
 	}
-
-	public SquireEngine getEngine() {
-		return engine;
+	
+	public StateManager getStateManager() {
+		return stateManager;
 	}
-
+	
+	public InterfaceManager getUIManager() {
+		return uiManager;
+	}
+	
 	public SquireCanvas getCanvas() {
 		return canvas;
 	}
-
+	
 	public SquireFrame getFrame() {
 		return frame;
 	}
-
-	public int getCanvasWidth() {
-		return canvasWidth;
+	
+	public int getWidth() {
+		return width;
 	}
-
-	public int getCanvasHeight() {
-		return canvasHeight;
+	
+	public int getHeight() {
+		return height;
 	}
 
 }

@@ -11,8 +11,8 @@ public abstract class UILayout {
 		components = new ArrayList<UIComponent>();
 	}
 
-	public abstract void initLayout();
-
+	public abstract void init();
+	
 	public void renderLayout(Graphics g) {
 		for (UIComponent component : components) {
 			component.renderComponent(g);
@@ -27,6 +27,10 @@ public abstract class UILayout {
 		for (UIComponent c : uiComponents) {
 			this.components.add(c);
 		}
+	}
+	
+	public void clearComponents() {
+		components.clear();
 	}
 
 	public ArrayList<UIComponent> getComponents() {

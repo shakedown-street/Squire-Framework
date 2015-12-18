@@ -7,8 +7,6 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 /**
- * Creates sheets of game images and returns cropped portions of the sheet as
- * Sprites.
  *
  * @author Jordan Price
  *

@@ -5,30 +5,24 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
-import com.squire.api.input.KeyInput;
-
 @SuppressWarnings("serial")
 public class SquireCanvas extends Canvas {
 
-	private SquireGame game;
 	private final int BUFFERS = 2;
-
-	private KeyInput keyInput;
+	private SquireGame game;
 	
 	public SquireCanvas(SquireGame game) {
 		this.game = game;
 		setFocusable(true);
 
-		setMinimumSize(new Dimension(game.getCanvasWidth(), game.getCanvasHeight()));
-		setSize(new Dimension(game.getCanvasWidth(), game.getCanvasHeight()));
+		setMinimumSize(new Dimension(game.getWidth(), game.getHeight()));
+		setSize(new Dimension(game.getWidth(), game.getHeight()));
 		
 		init();
 	}
 	
 	public void init() {
-		keyInput = new KeyInput(game);
 		
-		addKeyListener(keyInput);
 	}
 
 	public void render() {
@@ -41,16 +35,15 @@ public class SquireCanvas extends Canvas {
 		}
 
 		Graphics g = bs.getDrawGraphics();
-		g.clearRect(0, 0, game.getCanvasWidth(), game.getCanvasHeight());
-		game.getEngine().getStateManager().renderState(g);
-		game.getEngine().getUIManager().renderUI(g);
+		g.clearRect(0, 0, game.getWidth(), game.getHeight());
+		
+		// Render state
+		game.getStateManager().renderState(g);
+		// Render UI
+		game.getUIManager().renderUI(g);
 
 		g.dispose();
 		bs.show();
-	}
-	
-	public KeyInput getKeyInput() {
-		return keyInput;
 	}
 
 }
