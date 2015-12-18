@@ -44,18 +44,20 @@ public class PlayState extends AbstractState {
 		shield3 = new Sprite(new File(dir + "/Effects/shield3.png"));
 		engine5 = new Sprite(new File(dir + "/Parts/engine5.png"));
 	}
+	
+	int x = 0, y = 0;
 
 	@Override
 	public void process() {
-
+		x++;
+		y++;
 	}
 
 	@Override
 	public void render(Graphics g) {
 		background.render(g, 0, 0, 800, 500);
-		testAnimation.render(g, 50, 50);
-		damage1.render(g, 50, 50);
-		shield2.render(g, 34, 17);
+		testAnimation.render(g, x, y);
+		damage1.render(g, x, y);
 	}
 
 }
