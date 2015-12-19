@@ -1,5 +1,5 @@
 # Squire-Framework
-A jar-able game framework containing useful functionality for 2D game development.
+Takes care of some of the common tasks of a 2D game so you can just focus on writing your game.
 
 ### Engine Features
 * Canvas based rendering.

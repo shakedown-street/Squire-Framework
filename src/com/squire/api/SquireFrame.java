@@ -12,7 +12,7 @@ public class SquireFrame extends JFrame {
 		super();
 
 		JPanel root = new JPanel(new BorderLayout());
-		root.add(game.getCanvas(), BorderLayout.CENTER);
+		root.add(game, BorderLayout.CENTER);
 		getContentPane().add(root);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

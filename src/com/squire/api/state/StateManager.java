@@ -4,34 +4,45 @@ import java.awt.Graphics;
 
 public class StateManager {
 
-	private State currentState;
+	private AbstractState state;
 	
 	public StateManager() {
+		
+	}
 	
+	public boolean invalidState() {
+		return state == null || state.hasEnded();
 	}
 
 	public void processState() {
-		if (currentState == null) {
+		if (invalidState()) {
 			return;
 		}
 		
 		try {
-			currentState.process();
+			state.process();
+			state.getEventManager().process();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	public void renderState(Graphics g) {
-		if (currentState == null) {
+		if (invalidState()) {
 			return;
 		}
 		
 		try {
-			currentState.render(g);
+			state.render(g);
+			state.getUIManager().renderUI(g);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void setState(AbstractState state) {
+		this.state = state;
+		this.state.init();
 	}
 
 }

@@ -7,7 +7,7 @@ public interface State {
 	void init();
 
 	void process();
-
+	
 	void render(Graphics g);
 
 }

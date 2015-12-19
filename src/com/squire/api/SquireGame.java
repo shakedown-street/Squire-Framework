@@ -1,8 +1,11 @@
 package com.squire.api;
 
-import com.squire.api.event.EventManager;
+import java.awt.Canvas;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.image.BufferStrategy;
+
 import com.squire.api.state.StateManager;
-import com.squire.api.ui.InterfaceManager;
 
 /**
  * Squire: An open source game framework.
@@ -13,31 +16,32 @@ import com.squire.api.ui.InterfaceManager;
  *
  */
 
-public abstract class SquireGame implements Runnable {
+@SuppressWarnings("serial")
+public abstract class SquireGame extends Canvas implements Runnable {
 
 	private Thread thread;
-
-	public final static int MAX_FPS = 9999;
 	
-	private EventManager eventManager;
 	private StateManager stateManager;
-	private InterfaceManager uiManager;
 	
-	private SquireCanvas canvas;
 	private int width, height;
 	private SquireFrame frame;
+
+	public int lastFPS = 0;
+	private final static int MAX_FPS = 60;
+	private final static int BUFFERS = 2;
 
 	public SquireGame(int width, int height) {
 		this.width = width;
 		this.height = height;
+		setFocusable(true);
+
+		setMinimumSize(new Dimension(width, height));
+		setSize(new Dimension(width, height));
 		load();
 	}
 	
 	private void load() {
-		eventManager = new EventManager();
 		stateManager = new StateManager();
-		uiManager = new InterfaceManager();
-		canvas = new SquireCanvas(this);
 		frame = new SquireFrame(this);
 		start();
 	}
@@ -45,12 +49,30 @@ public abstract class SquireGame implements Runnable {
 	public abstract void init();
 	
 	private void process() {
-		eventManager.process();
 		stateManager.processState();
+	}
+	
+	private void render() {
+		BufferStrategy bs = this.getBufferStrategy();
+
+		if (bs == null) {
+			createBufferStrategy(BUFFERS);
+			requestFocus();
+			return;
+		}
+
+		Graphics g = bs.getDrawGraphics();
+		g.clearRect(0, 0, width, height);
+		
+		stateManager.renderState(g);
+
+		g.dispose();
+		bs.show();
 	}
 
 	@Override
 	public void run() {
+		init();
 		long lastFPSTime = System.currentTimeMillis();
 		int fps = 0;
 		long then = System.nanoTime();
@@ -74,11 +96,11 @@ public abstract class SquireGame implements Runnable {
 			}
 
 			if (canRender) {
-				canvas.render();
+				render();
 				fps++;
 			}
 			if (System.currentTimeMillis() - lastFPSTime > 1000) {
-				System.out.printf("%d FPS\n", fps);
+				lastFPS = fps;
 				lastFPSTime = System.currentTimeMillis();
 				fps = 0;
 			}
@@ -89,23 +111,10 @@ public abstract class SquireGame implements Runnable {
 		thread = new Thread(this);
 		thread.setPriority(Thread.MAX_PRIORITY);
 		thread.start();
-		init();
-	}
-	
-	public EventManager getEventManager() {
-		return eventManager;
 	}
 	
 	public StateManager getStateManager() {
 		return stateManager;
-	}
-	
-	public InterfaceManager getUIManager() {
-		return uiManager;
-	}
-	
-	public SquireCanvas getCanvas() {
-		return canvas;
 	}
 	
 	public SquireFrame getFrame() {
