@@ -36,6 +36,7 @@ public abstract class SquireGame extends Canvas implements Runnable {
 		setFocusable(true);
 
 		setMinimumSize(new Dimension(width, height));
+		setMaximumSize(new Dimension(width, height));
 		setSize(new Dimension(width, height));
 		load();
 	}
