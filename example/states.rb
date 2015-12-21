@@ -9,7 +9,7 @@
 # 	end
 # end
 
-class PlayState < AbstractState
+class PlayState < State
 	attr_accessor :player, :switch_anim, :fpsL
 
 	def init
@@ -48,7 +48,7 @@ class PlayState < AbstractState
 end
 
 
-class StartState < AbstractState
+class StartState < State
 
 	attr_reader :bg, :playBtn
 
@@ -67,7 +67,7 @@ class StartState < AbstractState
 	end
 
 	def endHook
-		play_state = PlayState.new(getGame(), 'play_state')
-		getGame().getStateManager().setState(play_state)
+		getGame().getStateManager().create(PlayState.new(getGame(), 'play_state'))
+		getGame().getStateManager().setState(getGame().getStateManager().getObject(1));
 	end
 end

@@ -2,9 +2,11 @@ package com.squire.api.state;
 
 import java.awt.Graphics;
 
-public class StateManager {
+import com.squire.api.ObjectManager;
 
-	private AbstractState state;
+public class StateManager extends ObjectManager<State> {
+
+	private State state;
 	
 	public StateManager() {
 		
@@ -40,7 +42,7 @@ public class StateManager {
 		}
 	}
 	
-	public void setState(AbstractState state) {
+	public void setState(State state) {
 		this.state = state;
 		this.state.init();
 	}
