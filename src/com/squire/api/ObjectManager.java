@@ -9,12 +9,14 @@ public abstract class ObjectManager<Type> {
 		objects = new ArrayList<Type>();
 	}
 	
-	public void create(Type obj) {
+	public Type create(Type obj) {
 		objects.add(obj);
+		return obj;
 	}
 	
-	public void destroy(Type obj) {
+	public Type destroy(Type obj) {
 		objects.remove(obj);
+		return obj;
 	}
 	
 	public Type getObject(int index) {

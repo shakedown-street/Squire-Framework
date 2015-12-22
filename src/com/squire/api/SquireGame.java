@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
+import com.squire.api.graphics.Animation;
+import com.squire.api.graphics.Sprite;
 import com.squire.api.state.StateManager;
 
 /**
@@ -22,6 +24,8 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	private Thread thread;
 	
 	private StateManager stateManager;
+	private ObjectManager<Sprite> spriteManager;
+	private ObjectManager<Animation> animationManager;
 	
 	private int width, height;
 	private SquireFrame frame;
@@ -43,6 +47,9 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	
 	private void load() {
 		stateManager = new StateManager();
+		spriteManager = new ObjectManager<Sprite>() { };
+		animationManager = new ObjectManager<Animation>() { };
+		
 		frame = new SquireFrame(this);
 		start();
 	}
@@ -116,6 +123,14 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	
 	public StateManager getStateManager() {
 		return stateManager;
+	}
+	
+	public ObjectManager<Sprite> getSprites() {
+		return spriteManager;
+	}
+	
+	public ObjectManager<Animation> getAnimations() {
+		return animationManager;
 	}
 	
 	public SquireFrame getFrame() {

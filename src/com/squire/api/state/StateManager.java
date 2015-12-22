@@ -36,7 +36,6 @@ public class StateManager extends ObjectManager<State> {
 		
 		try {
 			state.render(g);
-			state.getUIManager().renderUI(g);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

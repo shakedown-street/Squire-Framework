@@ -18,12 +18,9 @@ class Player
 
 	def renderDamaged(g, damage)
 		@anim.render(g, @x, @y)
-		if (damage == 1)
-			Sprites.ship1_damage1.render(g, @x, @y)
-		elsif (damage == 2)
-			Sprites.ship1_damage2.render(g, @x, @y)
-		elsif (damage == 3)
-			Sprites.ship1_damage3.render(g, @x, @y)
-		end
 	end
+end
+
+class PlayerManager < ObjectManager
+
 end
