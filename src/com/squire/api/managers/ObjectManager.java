@@ -1,4 +1,4 @@
-package com.squire.api;
+package com.squire.api.managers;
 import java.util.ArrayList;
 
 public abstract class ObjectManager<Type> {

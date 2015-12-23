@@ -4,11 +4,11 @@ require './lib/Squire.jar'
 java_import 'com.squire.api.ObjectManager'
 java_import 'com.squire.api.SquireGame'
 java_import 'com.squire.api.SquireFrame'
-java_import 'com.squire.api.event.Event'
-java_import 'com.squire.api.state.State'
-java_import 'com.squire.api.graphics.Animation'
-java_import 'com.squire.api.graphics.Sprite'
-java_import 'com.squire.api.graphics.SpriteSheet'
+java_import 'com.squire.api.Event'
+java_import 'com.squire.api.State'
+java_import 'com.squire.api.Sprite'
+java_import 'com.squire.api.Animation'
+java_import 'com.squire.api.SpriteSheet'
 java_import 'com.squire.api.ui.UIComponent'
 java_import 'com.squire.api.ui.UIButton'
 
@@ -33,32 +33,23 @@ class SpaceShooter < SquireGame
 		@playerShip1Damage = './assets/spaceshooter/PNG/Damage/playerShip2_damage'
 		@ui = './assets/spaceshooter/PNG/UI/'
 
-
-		@purple_background = getSprites().create(Sprite.new(
+		getSprites().create(Sprite.new('purple_bg',
 			java.io.File.new(@backgrounds + 'purple.png')))
-
-		@ship1_blue = getSprites().create(Sprite.new(
+		getSprites().create(Sprite.new('ship1_blue',
 			java.io.File.new(@playerShip1 + 'blue.png')))
-		
-		@ship1_red = getSprites().create(Sprite.new(
+		getSprites().create(Sprite.new('ship1_red',
 			java.io.File.new(@playerShip1 + 'red.png')))
-		
-		@ship1_green = getSprites().create(Sprite.new(
-			java.io.File.new(@playerShip1 + 'green.png')))
-		
-		@ship1_orange = getSprites().create(Sprite.new(
+		getSprites().create(Sprite.new('ship1_green',
+			java.io.File.new(@playerShip1 + 'green')))
+		getSprites().create(Sprite.new('ship1_orange',
 			java.io.File.new(@playerShip1 + 'orange.png')))
-		
-		@ship1_damage1 = getSprites().create(Sprite.new(
+		getSprites().create(Sprite.new('ship1_damage1',
 			java.io.File.new(@playerShip1Damage + '1.png')))
-		
-		@ship1_damage2 = getSprites().create(Sprite.new(
+		getSprites().create(Sprite.new('ship1_damage2',
 			java.io.File.new(@playerShip1Damage + '2.png')))
-		
-		@ship1_damage3 = getSprites().create(Sprite.new(
+		getSprites().create(Sprite.new('ship1_damage3',
 			java.io.File.new(@playerShip1Damage + '3.png')))
-		
-		@button_blue = getSprites().create(Sprite.new(
+		getSprites().create(Sprite.new('button_blue',
 			java.io.File.new(@ui + 'buttonBlue.png')))
 	end
 end

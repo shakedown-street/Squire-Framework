@@ -1,9 +1,9 @@
-package com.squire.api.state;
+package com.squire.api.models;
 
 import java.awt.Graphics;
 
 import com.squire.api.SquireGame;
-import com.squire.api.event.EventManager;
+import com.squire.api.managers.EventManager;
 
 public abstract class State {
 

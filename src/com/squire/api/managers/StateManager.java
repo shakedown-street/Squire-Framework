@@ -1,8 +1,8 @@
-package com.squire.api.state;
+package com.squire.api.managers;
 
 import java.awt.Graphics;
 
-import com.squire.api.ObjectManager;
+import com.squire.api.models.State;
 
 public class StateManager extends ObjectManager<State> {
 
@@ -39,6 +39,10 @@ public class StateManager extends ObjectManager<State> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public State getState() {
+		return state;
 	}
 	
 	public void setState(State state) {

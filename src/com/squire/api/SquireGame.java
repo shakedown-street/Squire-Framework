@@ -5,9 +5,9 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
-import com.squire.api.graphics.Animation;
-import com.squire.api.graphics.Sprite;
-import com.squire.api.state.StateManager;
+import com.squire.api.managers.AnimationManager;
+import com.squire.api.managers.SpriteManager;
+import com.squire.api.managers.StateManager;
 
 /**
  * Squire: An open source game framework.
@@ -24,8 +24,8 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	private Thread thread;
 	
 	private StateManager stateManager;
-	private ObjectManager<Sprite> spriteManager;
-	private ObjectManager<Animation> animationManager;
+	private SpriteManager spriteManager;
+	private AnimationManager animationManager;
 	
 	private int width, height;
 	private SquireFrame frame;
@@ -47,8 +47,8 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	
 	private void load() {
 		stateManager = new StateManager();
-		spriteManager = new ObjectManager<Sprite>() { };
-		animationManager = new ObjectManager<Animation>() { };
+		spriteManager = new SpriteManager();
+		animationManager = new AnimationManager();
 		
 		frame = new SquireFrame(this);
 		start();
@@ -58,6 +58,7 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	
 	private void process() {
 		stateManager.processState();
+		stateManager.getState().getEventManager().process();
 	}
 	
 	private void render() {
@@ -125,11 +126,11 @@ public abstract class SquireGame extends Canvas implements Runnable {
 		return stateManager;
 	}
 	
-	public ObjectManager<Sprite> getSprites() {
+	public SpriteManager getSprites() {
 		return spriteManager;
 	}
 	
-	public ObjectManager<Animation> getAnimations() {
+	public AnimationManager getAnimations() {
 		return animationManager;
 	}
 	

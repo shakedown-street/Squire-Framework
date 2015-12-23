@@ -1,4 +1,4 @@
-package com.squire.api.event;
+package com.squire.api.models;
 
 /**
  * @author Jordan Price
@@ -18,7 +18,6 @@ public abstract class Event {
 		this.running = true;
 	}
 	
-	public abstract void init();
 	public abstract void execute();
 
 	public boolean shouldExecute() {

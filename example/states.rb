@@ -14,13 +14,13 @@ class PlayState < State
 
 	def init
 		switch_anim_sprites = [
-			getGame().ship1_blue,
-			getGame().ship1_green,
-			getGame().ship1_orange,
-			getGame().ship1_red
+			getGame().getSprites().getByName('ship1_blue'),
+			getGame().getSprites().getByName('ship1_green'),
+			getGame().getSprites().getByName('ship1_orange'),
+			getGame().getSprites().getByName('ship1_red')
 		].to_java(Sprite)
 
-		@switch_anim = Animation.new(switch_anim_sprites, 250)
+		@switch_anim = getGame().getAnimations().create(Animation.new(switch_anim_sprites, 250))
 
 		@playerManager = PlayerManager.new
 		@player = @playerManager.create(Player.new(@switch_anim))

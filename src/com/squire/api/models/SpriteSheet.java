@@ -1,4 +1,4 @@
-package com.squire.api.graphics;
+package com.squire.api.models;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -30,15 +30,12 @@ public class SpriteSheet {
 		this.img = img;
 	}
 
-	/**
-	 * Returns a sprite from the sheet at the specified location.
-	 */
-	public Sprite getSprite(int x, int y, int w, int h) {
-		return new Sprite(img.getSubimage(x, y, w, h));
-	}
-
 	public BufferedImage getImg() {
 		return img;
+	}
+	
+	public BufferedImage getImg(int x, int y, int w, int h) {
+		return img.getSubimage(x, y, w, h);
 	}
 
 	public void setImg(BufferedImage img) {

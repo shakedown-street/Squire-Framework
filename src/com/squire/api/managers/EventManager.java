@@ -1,6 +1,6 @@
-package com.squire.api.event;
+package com.squire.api.managers;
 
-import com.squire.api.ObjectManager;
+import com.squire.api.models.Event;
 
 /**
  * Cycles through all events at the specified cycle rate.
@@ -9,15 +9,6 @@ import com.squire.api.ObjectManager;
  */
 
 public class EventManager extends ObjectManager<Event> {
-	
-	@Override
-	public Event create(Event obj) {
-		super.create(obj);
-		obj.init();
-		obj.setRunning(true);
-		return obj;
-	}
-	
 	public void process() {
 		for (int i = 0; i < objects.size(); i++) {
 			if (objects.get(i).shouldExecute()) {

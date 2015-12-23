@@ -1,4 +1,4 @@
-package com.squire.api.graphics;
+package com.squire.api.models;
 
 public class Frame {
 	
