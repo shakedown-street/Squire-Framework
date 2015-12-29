@@ -24,8 +24,6 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	private Thread thread;
 	
 	private StateManager stateManager;
-	private SpriteManager spriteManager;
-	private AnimationManager animationManager;
 	
 	private int width, height;
 	private SquireFrame frame;
@@ -47,8 +45,6 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	
 	private void load() {
 		stateManager = new StateManager();
-		spriteManager = new SpriteManager();
-		animationManager = new AnimationManager();
 		
 		frame = new SquireFrame(this);
 		start();
@@ -58,7 +54,6 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	
 	private void process() {
 		stateManager.processState();
-		stateManager.getState().getEventManager().process();
 	}
 	
 	private void render() {
@@ -124,14 +119,6 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	
 	public StateManager getStateManager() {
 		return stateManager;
-	}
-	
-	public SpriteManager getSprites() {
-		return spriteManager;
-	}
-	
-	public AnimationManager getAnimations() {
-		return animationManager;
 	}
 	
 	public SquireFrame getFrame() {
