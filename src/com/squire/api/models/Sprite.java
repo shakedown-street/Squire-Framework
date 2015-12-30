@@ -8,13 +8,13 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class Sprite {
-	
+
 	private BufferedImage img;
-	
+
 	public Sprite(BufferedImage img) {
 		this.img = img;
 	}
-	
+
 	public Sprite(File file) {
 		try {
 			this.img = ImageIO.read(file);
@@ -23,11 +23,11 @@ public class Sprite {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public Sprite(String filePath) {
 		this(new File(filePath));
 	}
-	
+
 	/**
 	 * Create a Sprite object from a Sprite sheet
 	 */

@@ -9,7 +9,7 @@ public abstract class Event {
 	private int interval;
 
 	private int cycles;
-	
+
 	private boolean running;
 
 	public Event(int interval) {
@@ -17,7 +17,7 @@ public abstract class Event {
 		this.cycles = interval;
 		this.running = true;
 	}
-	
+
 	public abstract void execute();
 
 	public boolean shouldExecute() {
@@ -27,7 +27,7 @@ public abstract class Event {
 		}
 		return running;
 	}
-	
+
 	public int getInterval() {
 		return interval;
 	}
@@ -35,7 +35,7 @@ public abstract class Event {
 	public void setInterval(int interval) {
 		this.interval = interval;
 	}
-	
+
 	public boolean isRunning() {
 		return running;
 	}

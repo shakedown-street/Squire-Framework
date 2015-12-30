@@ -22,9 +22,9 @@ import com.squire.api.managers.StateManager;
 public abstract class SquireGame extends Canvas implements Runnable {
 
 	private Thread thread;
-	
+
 	private StateManager stateManager;
-	
+
 	private int width, height;
 	private SquireFrame frame;
 
@@ -42,20 +42,20 @@ public abstract class SquireGame extends Canvas implements Runnable {
 		setSize(new Dimension(width, height));
 		load();
 	}
-	
+
 	private void load() {
 		stateManager = new StateManager();
-		
+
 		frame = new SquireFrame(this);
 		start();
 	}
-	
+
 	public abstract void init();
-	
+
 	private void process() {
 		stateManager.processState();
 	}
-	
+
 	private void render() {
 		BufferStrategy bs = this.getBufferStrategy();
 
@@ -67,7 +67,7 @@ public abstract class SquireGame extends Canvas implements Runnable {
 
 		Graphics g = bs.getDrawGraphics();
 		g.clearRect(0, 0, width, height);
-		
+
 		stateManager.renderState(g);
 
 		g.dispose();
@@ -116,19 +116,19 @@ public abstract class SquireGame extends Canvas implements Runnable {
 		thread.setPriority(Thread.MAX_PRIORITY);
 		thread.start();
 	}
-	
+
 	public StateManager getStateManager() {
 		return stateManager;
 	}
-	
+
 	public SquireFrame getFrame() {
 		return frame;
 	}
-	
+
 	public int getWidth() {
 		return width;
 	}
-	
+
 	public int getHeight() {
 		return height;
 	}

@@ -25,8 +25,8 @@ public class Spaceshooter extends SquireGame {
 			public void init() {
 				System.out.println("start state");
 
-				purpleBackground = getSpriteManager().create(
-						new Sprite(backgrounds + "purple.png"));
+				purpleBackground = getSpriteManager()
+						.create(new Sprite(backgrounds + "purple.png"));
 			}
 
 			@Override

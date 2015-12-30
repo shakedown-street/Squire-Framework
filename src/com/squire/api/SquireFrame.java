@@ -18,7 +18,7 @@ public class SquireFrame extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
 		pack();
-		
+
 		// setTitle(game.getTitle());
 		setLocationRelativeTo(null);
 		setVisible(true);

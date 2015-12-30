@@ -26,21 +26,24 @@ public abstract class State {
 		this.spriteManager = new SpriteManager();
 		this.animationManager = new AnimationManager();
 	}
-	
+
 	public abstract void init();
+
 	public abstract void process();
+
 	public abstract void render(Graphics g);
+
 	public abstract void endHook();
-	
+
 	public void stop() {
 		this.ended = true;
 		this.endHook();
 	}
-	
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public SquireGame getGame() {
 		return game;
 	}
@@ -48,7 +51,7 @@ public abstract class State {
 	public boolean hasEnded() {
 		return ended;
 	}
-	
+
 	public EventManager getEventManager() {
 		return eventManager;
 	}
@@ -56,7 +59,7 @@ public abstract class State {
 	public ArrayList<Event> getEvents() {
 		return getEventManager().getObjects();
 	}
-	
+
 	public SpriteManager getSpriteManager() {
 		return spriteManager;
 	}
@@ -64,7 +67,7 @@ public abstract class State {
 	public ArrayList<Sprite> getSprites() {
 		return getSpriteManager().getObjects();
 	}
-	
+
 	public AnimationManager getAnimationManager() {
 		return animationManager;
 	}

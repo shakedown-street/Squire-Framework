@@ -7,11 +7,11 @@ import com.squire.api.models.State;
 public class StateManager extends ObjectManager<State> {
 
 	private State state;
-	
+
 	public StateManager() {
-		
+
 	}
-	
+
 	public boolean invalidState() {
 		return state == null || state.hasEnded();
 	}
@@ -20,7 +20,7 @@ public class StateManager extends ObjectManager<State> {
 		if (invalidState()) {
 			return;
 		}
-		
+
 		try {
 			state.process();
 			state.getEventManager().process();
@@ -33,18 +33,18 @@ public class StateManager extends ObjectManager<State> {
 		if (invalidState()) {
 			return;
 		}
-		
+
 		try {
 			state.render(g);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public State getState() {
 		return state;
 	}
-	
+
 	public void setState(State state) {
 		this.state = state;
 		this.state.init();
