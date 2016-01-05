@@ -11,9 +11,7 @@ import com.squire.api.models.Event;
 public class EventManager extends ObjectManager<Event> {
 	public void process() {
 		for (int i = 0; i < objects.size(); i++) {
-			if (objects.get(i).shouldExecute()) {
-				objects.get(i).execute();
-			} else {
+			if (!objects.get(i).shouldExecute()) {
 				objects.remove(i);
 			}
 		}

@@ -46,6 +46,9 @@ public class StateManager extends ObjectManager<State> {
 	}
 
 	public void setState(State state) {
+		if (state == null) {
+			return;
+		}
 		this.state = state;
 		this.state.init();
 	}

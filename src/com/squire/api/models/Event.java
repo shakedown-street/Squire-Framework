@@ -24,6 +24,7 @@ public abstract class Event {
 		cycles--;
 		if (running && cycles == 0) {
 			cycles = interval;
+			this.execute();
 		}
 		return running;
 	}

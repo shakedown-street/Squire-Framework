@@ -2,6 +2,10 @@ package com.squire.api.ui;
 
 import java.awt.Graphics;
 
+import com.squire.api.ui.events.Clickable;
+import com.squire.api.ui.events.Hoverable;
+import com.squire.api.ui.events.Toggleable;
+
 public abstract class UIComponent {
 
 	public UIComponent() {

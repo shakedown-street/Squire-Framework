@@ -22,9 +22,9 @@ public abstract class State {
 		this.name = name;
 		this.game = game;
 		this.ended = false;
+		this.animationManager = new AnimationManager();
 		this.eventManager = new EventManager();
 		this.spriteManager = new SpriteManager();
-		this.animationManager = new AnimationManager();
 	}
 
 	public abstract void init();

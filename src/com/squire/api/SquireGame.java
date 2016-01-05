@@ -5,9 +5,8 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
-import com.squire.api.managers.AnimationManager;
-import com.squire.api.managers.SpriteManager;
 import com.squire.api.managers.StateManager;
+import com.squire.api.models.State;
 
 /**
  * Squire: An open source game framework.
@@ -21,12 +20,12 @@ import com.squire.api.managers.StateManager;
 @SuppressWarnings("serial")
 public abstract class SquireGame extends Canvas implements Runnable {
 
-	private Thread thread;
-
 	private StateManager stateManager;
 
 	private int width, height;
 	private SquireFrame frame;
+
+	private Thread thread;
 
 	public int lastFPS = 0;
 	private final static int MAX_FPS = 60;
@@ -45,12 +44,12 @@ public abstract class SquireGame extends Canvas implements Runnable {
 
 	private void load() {
 		stateManager = new StateManager();
-
 		frame = new SquireFrame(this);
 		start();
 	}
 
 	public abstract void init();
+	public abstract State initialState();
 
 	private void process() {
 		stateManager.processState();
@@ -77,6 +76,7 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	@Override
 	public void run() {
 		init();
+		stateManager.setState(initialState());
 		long lastFPSTime = System.currentTimeMillis();
 		int fps = 0;
 		long then = System.nanoTime();

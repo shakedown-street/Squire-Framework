@@ -1,4 +1,4 @@
-package com.squire.api.ui;
+package com.squire.api.ui.events;
 
 public interface Clickable {
 
