@@ -23,7 +23,9 @@ public class StartState extends State {
 	private Sprite orange;
 	private Sprite red;
 	private Animation switchColorAnim;
-	private Event printEvent;
+	private Event moveEvent;
+
+	int cX = 20, cY = 20;
 
 	@Override
 	public void init() {
@@ -39,27 +41,23 @@ public class StartState extends State {
 		switchColorAnim = getAnimationManager().create(new Animation(new Sprite[] { blue, green, orange, red }, 15));
 		switchColorAnim.start(true);
 		
-		printEvent = getEventManager().create(new Event(60) {
-			int var = 0;
+		moveEvent = getEventManager().create(new Event(1) {
 
 			@Override
 			public void execute() {
-				var++;
-				System.out.println("Ayy lmao " + var);
+				cX += 2;
+				cY += 2;
+				if (cY >= getGame().getHeight()) {
+					getGame().setCurrentState(new StartState(getGame(), "start_state"));
+					stop();
+				}
 			}
 		});
 	}
 
-	int cX = 20, cY = 20;
-
 	@Override
 	public void process() {
-		cX += 1;
-		cY += 1;
-		if (cY >= getGame().getHeight()) {
-			getGame().setCurrentState(new StartState(getGame(), "start_state"));
-			stop();
-		}
+		
 	}
 
 	@Override

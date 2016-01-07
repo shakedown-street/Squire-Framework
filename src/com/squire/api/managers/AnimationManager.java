@@ -7,7 +7,6 @@ import com.squire.api.models.Animation;
  * @author Jordan/shakedown-street
  */
 public class AnimationManager extends SquireManager<Animation> {
-
 	public void process() {
 		for (Animation anim : objectSet()) {
 			if (anim.isRunning()) {
