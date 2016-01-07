@@ -17,8 +17,8 @@ public class Animation {
 	private boolean looping;
 
 	private Animation() {
-		frame = -1;
-		delay = -1;
+		frame = 0;
+		delay = 0;
 		frameSet = new LinkedList<Frame>();
 		running = false;
 		looping = false;
@@ -52,7 +52,8 @@ public class Animation {
 		f.getSprite().render(g, x, y);
 	}
 
-	public void start() {
+	public void start(boolean loop) {
+		looping = loop;
 		if (!running) {
 			restart();
 		}

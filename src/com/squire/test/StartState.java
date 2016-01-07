@@ -37,7 +37,8 @@ public class StartState extends State {
 		red = getSpriteManager().create(new Sprite(playerShip1 + "red.png"));
 
 		switchColorAnim = getAnimationManager().create(new Animation(new Sprite[] { blue, green, orange, red }, 15));
-
+		switchColorAnim.start(true);
+		
 		printEvent = getEventManager().create(new Event(60) {
 			int var = 0;
 
@@ -53,8 +54,8 @@ public class StartState extends State {
 
 	@Override
 	public void process() {
-		cX += 2;
-		cY += 2;
+		cX += 1;
+		cY += 1;
 		if (cY >= getGame().getHeight()) {
 			getGame().setCurrentState(new StartState(getGame(), "start_state"));
 			stop();

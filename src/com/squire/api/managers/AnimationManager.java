@@ -10,9 +10,6 @@ public class AnimationManager extends SquireManager<Animation> {
 
 	public void process() {
 		for (Animation anim : objectSet()) {
-			if (!anim.isRunning()) {
-				anim.start();
-			}
 			if (anim.isRunning()) {
 				if (anim.shouldIncrement()) {
 					anim.incrementFrame();
