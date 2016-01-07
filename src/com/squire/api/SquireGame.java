@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 import com.squire.api.managers.StateManager;
+import com.squire.api.models.State;
 
 /**
  * Squire: An open source game framework.
@@ -42,13 +43,20 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	private void load() {
 		stateManager = new StateManager();
 		frame = new SquireFrame(this);
-		start();
 	}
 
 	public abstract void init();
 
 	private void process() {
-		stateManager.processState();
+		if (stateManager.isValidState()) {
+			try {
+				stateManager.getState().process();
+				stateManager.getState().getAnimationManager().process();
+				stateManager.getState().getEventManager().process();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	private void render() {
@@ -63,7 +71,13 @@ public abstract class SquireGame extends Canvas implements Runnable {
 		Graphics g = bs.getDrawGraphics();
 		g.clearRect(0, 0, width, height);
 
-		stateManager.renderState(g);
+		if (stateManager.isValidState()) {
+			try {
+				stateManager.getState().render(g);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 
 		g.dispose();
 		bs.show();
@@ -114,6 +128,10 @@ public abstract class SquireGame extends Canvas implements Runnable {
 
 	public StateManager getStateManager() {
 		return stateManager;
+	}
+
+	public void setCurrentState(State state) {
+		getStateManager().setState(state);
 	}
 
 	public SquireFrame getFrame() {

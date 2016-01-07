@@ -8,4 +8,25 @@ import com.squire.api.models.Animation;
  */
 public class AnimationManager extends SquireManager<Animation> {
 
+	public void process() {
+		for (Animation anim : objectSet()) {
+			if (!anim.isRunning()) {
+				anim.start();
+			}
+			if (anim.isRunning()) {
+				if (anim.shouldIncrement()) {
+					anim.incrementFrame();
+					
+					if (anim.getFrame() > anim.getFrameSet().size() - 1) {
+						if (anim.isLooping()) {
+							anim.restart();
+						} else {
+							anim.stop();
+						}
+					}
+				}
+			}
+		}
+	}
+
 }

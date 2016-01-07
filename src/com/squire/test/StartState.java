@@ -35,12 +35,12 @@ public class StartState extends State {
 		green = getSpriteManager().create(new Sprite(playerShip1 + "green.png"));
 		orange = getSpriteManager().create(new Sprite(playerShip1 + "orange.png"));
 		red = getSpriteManager().create(new Sprite(playerShip1 + "red.png"));
-		
-		switchColorAnim = getAnimationManager()
-				.create(new Animation(new Sprite[] { blue, green, orange, red }, 100));
-		
+
+		switchColorAnim = getAnimationManager().create(new Animation(new Sprite[] { blue, green, orange, red }, 15));
+
 		printEvent = getEventManager().create(new Event(60) {
 			int var = 0;
+
 			@Override
 			public void execute() {
 				var++;
@@ -48,14 +48,15 @@ public class StartState extends State {
 			}
 		});
 	}
-	
+
 	int cX = 20, cY = 20;
 
 	@Override
 	public void process() {
-		cX++;
-		cY++;
-		if (cY >= 500) {
+		cX += 2;
+		cY += 2;
+		if (cY >= getGame().getHeight()) {
+			getGame().setCurrentState(new StartState(getGame(), "start_state"));
 			stop();
 		}
 	}

@@ -12,12 +12,12 @@ public class StateManager extends SquireManager<State> {
 
 	private State state;
 
-	public boolean invalidState() {
-		return state == null || state.hasEnded();
+	public boolean isValidState() {
+		return state != null && !state.hasEnded();
 	}
 
 	public void processState() {
-		if (invalidState()) {
+		if (!isValidState()) {
 			return;
 		}
 
@@ -30,7 +30,7 @@ public class StateManager extends SquireManager<State> {
 	}
 
 	public void renderState(Graphics g) {
-		if (invalidState()) {
+		if (!isValidState()) {
 			return;
 		}
 

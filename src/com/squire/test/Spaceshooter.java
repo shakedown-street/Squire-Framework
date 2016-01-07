@@ -20,9 +20,9 @@ public class Spaceshooter extends SquireGame {
 		startState = getStateManager().create(new StartState(this, "start_state"));
 		getStateManager().setState(startState);
 	}
-	
+
 	public static void main(String[] args) {
-		new Spaceshooter(800, 500);
+		new Spaceshooter(800, 500).start();
 	}
 
 }
