@@ -1,5 +1,8 @@
 package com.squire.api.models;
 
+/**
+ * @author Jordan/shakedown-street
+ */
 public class Frame {
 
 	private Sprite sprite;

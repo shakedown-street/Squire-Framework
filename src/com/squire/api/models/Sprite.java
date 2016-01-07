@@ -7,6 +7,9 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+/**
+ * @author Jordan/shakedown-street
+ */
 public class Sprite {
 
 	private BufferedImage img;

@@ -3,6 +3,9 @@ package com.squire.api.models;
 import java.awt.Graphics;
 import java.util.LinkedList;
 
+/**
+ * @author Jordan/shakedown-street
+ */
 public class Animation {
 
 	private int frame;

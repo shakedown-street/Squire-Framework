@@ -1,4 +1,4 @@
-package com.squire.api.ui.events;
+package com.squire.api.ui.actions;
 
 public interface Hoverable {
 

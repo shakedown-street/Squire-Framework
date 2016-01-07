@@ -2,15 +2,15 @@ package com.squire.api.managers;
 
 import java.awt.Graphics;
 
+import com.squire.api.SquireManager;
 import com.squire.api.models.State;
 
-public class StateManager extends ObjectManager<State> {
+/**
+ * @author Jordan/shakedown-street
+ */
+public class StateManager extends SquireManager<State> {
 
 	private State state;
-
-	public StateManager() {
-
-	}
 
 	public boolean invalidState() {
 		return state == null || state.hasEnded();

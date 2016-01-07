@@ -1,9 +1,8 @@
 package com.squire.api.models;
 
 /**
- * @author Jordan Price
+ * @author Jordan/shakedown-street
  */
-
 public abstract class Event {
 
 	private int interval;

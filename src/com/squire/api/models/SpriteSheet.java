@@ -7,9 +7,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 /**
- *
- * @author Jordan Price
- *
+ * @author Jordan/shakedown-street
  */
 public class SpriteSheet {
 

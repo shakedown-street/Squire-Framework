@@ -5,6 +5,9 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+/**
+ * @author Jordan/shakedown-street
+ */
 @SuppressWarnings("serial")
 public class SquireFrame extends JFrame {
 

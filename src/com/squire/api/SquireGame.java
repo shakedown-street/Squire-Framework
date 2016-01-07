@@ -6,17 +6,14 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 import com.squire.api.managers.StateManager;
-import com.squire.api.models.State;
 
 /**
  * Squire: An open source game framework.
  * 
  * Use however you'd like.
  *
- * @author Jordan Price
- *
+ * @author Jordan/shakedown-street
  */
-
 @SuppressWarnings("serial")
 public abstract class SquireGame extends Canvas implements Runnable {
 
@@ -49,7 +46,6 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	}
 
 	public abstract void init();
-	public abstract State initialState();
 
 	private void process() {
 		stateManager.processState();
@@ -76,7 +72,6 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	@Override
 	public void run() {
 		init();
-		stateManager.setState(initialState());
 		long lastFPSTime = System.currentTimeMillis();
 		int fps = 0;
 		long then = System.nanoTime();

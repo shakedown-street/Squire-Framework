@@ -1,7 +1,11 @@
 package com.squire.api.managers;
 
+import com.squire.api.SquireManager;
 import com.squire.api.models.Sprite;
 
-public class SpriteManager extends ObjectManager<Sprite> {
+/**
+ * @author Jordan/shakedown-street
+ */
+public class SpriteManager extends SquireManager<Sprite> {
 
 }

@@ -8,6 +8,9 @@ import com.squire.api.managers.AnimationManager;
 import com.squire.api.managers.EventManager;
 import com.squire.api.managers.SpriteManager;
 
+/**
+ * @author Jordan/shakedown-street
+ */
 public abstract class State {
 
 	private String name;
@@ -57,7 +60,7 @@ public abstract class State {
 	}
 
 	public ArrayList<Event> getEvents() {
-		return getEventManager().getObjects();
+		return getEventManager().objectSet();
 	}
 
 	public SpriteManager getSpriteManager() {
@@ -65,7 +68,7 @@ public abstract class State {
 	}
 
 	public ArrayList<Sprite> getSprites() {
-		return getSpriteManager().getObjects();
+		return getSpriteManager().objectSet();
 	}
 
 	public AnimationManager getAnimationManager() {
@@ -73,7 +76,7 @@ public abstract class State {
 	}
 
 	public ArrayList<Animation> getAnimations() {
-		return getAnimationManager().getObjects();
+		return getAnimationManager().objectSet();
 	}
 
 }
