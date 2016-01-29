@@ -4,9 +4,9 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 
 import com.squire.api.SquireGame;
-import com.squire.api.managers.AnimationManager;
-import com.squire.api.managers.EventManager;
-import com.squire.api.managers.SpriteManager;
+import com.squire.api.services.AnimationService;
+import com.squire.api.services.EventService;
+import com.squire.api.services.SpriteService;
 
 /**
  * @author Jordan/shakedown-street
@@ -17,17 +17,17 @@ public abstract class State {
 	private SquireGame game;
 	private boolean ended;
 
-	private AnimationManager animationManager;
-	private EventManager eventManager;
-	private SpriteManager spriteManager;
+	private AnimationService animationService;
+	private EventService eventService;
+	private SpriteService spriteService;
 
 	public State(SquireGame game, String name) {
 		this.name = name;
 		this.game = game;
 		this.ended = false;
-		this.animationManager = new AnimationManager();
-		this.eventManager = new EventManager();
-		this.spriteManager = new SpriteManager();
+		this.animationService = new AnimationService();
+		this.eventService = new EventService();
+		this.spriteService = new SpriteService();
 	}
 
 	public abstract void init();
@@ -55,28 +55,28 @@ public abstract class State {
 		return ended;
 	}
 
-	public EventManager getEventManager() {
-		return eventManager;
+	public EventService getEventService() {
+		return eventService;
 	}
 
 	public ArrayList<Event> getEvents() {
-		return getEventManager().objectSet();
+		return getEventService().objectSet();
 	}
 
-	public SpriteManager getSpriteManager() {
-		return spriteManager;
+	public SpriteService getSpriteService() {
+		return spriteService;
 	}
 
 	public ArrayList<Sprite> getSprites() {
-		return getSpriteManager().objectSet();
+		return getSpriteService().objectSet();
 	}
 
-	public AnimationManager getAnimationManager() {
-		return animationManager;
+	public AnimationService getAnimationService() {
+		return animationService;
 	}
 
 	public ArrayList<Animation> getAnimations() {
-		return getAnimationManager().objectSet();
+		return getAnimationService().objectSet();
 	}
 
 }

@@ -7,11 +7,11 @@ import java.util.ArrayList;
  *
  * @param <Model>
  */
-public abstract class SquireManager<Model> {
+public abstract class SquireService<Model> {
 
 	protected ArrayList<Model> objects;
 
-	public SquireManager() {
+	public SquireService() {
 		objects = new ArrayList<Model>();
 	}
 

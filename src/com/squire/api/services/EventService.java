@@ -1,6 +1,6 @@
-package com.squire.api.managers;
+package com.squire.api.services;
 
-import com.squire.api.SquireManager;
+import com.squire.api.SquireService;
 import com.squire.api.models.Event;
 
 /**
@@ -8,7 +8,7 @@ import com.squire.api.models.Event;
  * 
  * @author Jordan/shakedown-street
  */
-public class EventManager extends SquireManager<Event> {
+public class EventService extends SquireService<Event> {
 	public void process() {
 		for (int i = 0; i < objects.size(); i++) {
 			if (!objects.get(i).shouldExecute()) {

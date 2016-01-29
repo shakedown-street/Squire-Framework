@@ -5,8 +5,8 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
-import com.squire.api.managers.StateManager;
 import com.squire.api.models.State;
+import com.squire.api.services.StateService;
 
 /**
  * Squire: An open source game framework.
@@ -18,7 +18,7 @@ import com.squire.api.models.State;
 @SuppressWarnings("serial")
 public abstract class SquireGame extends Canvas implements Runnable {
 
-	private StateManager stateManager;
+	private StateService stateService;
 
 	private int width, height;
 	private SquireFrame frame;
@@ -41,22 +41,14 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	}
 
 	private void load() {
-		stateManager = new StateManager();
+		stateService = new StateService();
 		frame = new SquireFrame(this);
 	}
 
 	public abstract void init();
 
 	private void process() {
-		if (stateManager.isValidState()) {
-			try {
-				stateManager.getState().process();
-				stateManager.getState().getAnimationManager().process();
-				stateManager.getState().getEventManager().process();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+		getStateService().process();
 	}
 
 	private void render() {
@@ -70,14 +62,8 @@ public abstract class SquireGame extends Canvas implements Runnable {
 
 		Graphics g = bs.getDrawGraphics();
 		g.clearRect(0, 0, width, height);
-
-		if (stateManager.isValidState()) {
-			try {
-				stateManager.getState().render(g);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+		
+		stateService.render(g);
 
 		g.dispose();
 		bs.show();
@@ -126,12 +112,8 @@ public abstract class SquireGame extends Canvas implements Runnable {
 		thread.start();
 	}
 
-	public StateManager getStateManager() {
-		return stateManager;
-	}
-
-	public void setCurrentState(State state) {
-		getStateManager().setState(state);
+	public StateService getStateService() {
+		return stateService;
 	}
 
 	public SquireFrame getFrame() {
