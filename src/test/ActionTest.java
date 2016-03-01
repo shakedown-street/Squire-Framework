@@ -23,7 +23,7 @@ public class ActionTest extends SquireGame {
 
 			@Override
 			public void init() {
-				getKeys().addAction(new KeyAction(KeyEvent.VK_W, Type.TYPED) {
+				getKeys().addAction(new KeyAction(KeyEvent.VK_W, Type.RELEASED) {
 					@Override
 					public void act() {
 						System.out.println("w typed");

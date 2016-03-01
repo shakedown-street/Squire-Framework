@@ -13,8 +13,9 @@ public class Keys implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		for (KeyAction action : actions) {
-			if (e.getKeyCode() == action.getKey() && action.getType() == Type.PRESSED) {
-				action.act();
+			if (e.getKeyCode() == action.getKey()) {
+				if (action.getType() == Type.PRESSED)
+					action.act();
 			}
 		}
 	}
@@ -22,8 +23,9 @@ public class Keys implements KeyListener {
 	@Override
 	public void keyReleased(KeyEvent e) {
 		for (KeyAction action : actions) {
-			if (e.getKeyCode() == action.getKey() && action.getType() == Type.RELEASED) {
-				action.act();
+			if (e.getKeyCode() == action.getKey()) {
+				if (action.getType() == Type.RELEASED)
+					action.act();
 			}
 		}
 	}
@@ -31,8 +33,9 @@ public class Keys implements KeyListener {
 	@Override
 	public void keyTyped(KeyEvent e) {
 		for (KeyAction action : actions) {
-			if (e.getKeyCode() == action.getKey() && action.getType() == Type.TYPED) {
-				action.act();
+			if (e.getKeyCode() == action.getKey()) {
+				if (action.getType() == Type.TYPED)
+					action.act();
 			}
 		}
 	}

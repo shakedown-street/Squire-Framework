@@ -74,11 +74,11 @@ public class Animation {
 	public int getFrame() {
 		return frame;
 	}
-	
+
 	public void incrementFrame() {
 		frame++;
 	}
-	
+
 	public LinkedList<Frame> getFrameSet() {
 		return frameSet;
 	}
