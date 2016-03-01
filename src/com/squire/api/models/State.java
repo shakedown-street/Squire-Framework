@@ -4,6 +4,8 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 
 import com.squire.api.SquireGame;
+import com.squire.api.player.Keys;
+import com.squire.api.player.Mouse;
 import com.squire.api.services.AnimationService;
 import com.squire.api.services.EventService;
 import com.squire.api.services.SpriteService;
@@ -17,17 +19,22 @@ public abstract class State {
 	private SquireGame game;
 	private boolean ended;
 
+	private Keys keyInput;
+	private Mouse mouseInput;
 	private AnimationService animationService;
 	private EventService eventService;
 	private SpriteService spriteService;
 
-	public State(SquireGame game, String name) {
-		this.name = name;
-		this.game = game;
-		this.ended = false;
-		this.animationService = new AnimationService();
-		this.eventService = new EventService();
-		this.spriteService = new SpriteService();
+	public State(SquireGame _game, String _name) {
+		this.name = _name;
+		game = _game;
+		ended = false;
+		animationService = new AnimationService();
+		eventService = new EventService();
+		spriteService = new SpriteService();
+
+		keyInput = new Keys();
+		mouseInput = new Mouse();
 	}
 
 	public abstract void init();
@@ -54,6 +61,22 @@ public abstract class State {
 	public boolean hasEnded() {
 		return ended;
 	}
+	
+	public Keys getKeys() {
+		return keyInput;
+	}
+	
+	public Mouse getMouse() {
+		return mouseInput;
+	}
+
+	public AnimationService getAnimationService() {
+		return animationService;
+	}
+
+	public ArrayList<Animation> getAnimations() {
+		return getAnimationService().objectSet();
+	}
 
 	public EventService getEventService() {
 		return eventService;
@@ -69,14 +92,6 @@ public abstract class State {
 
 	public ArrayList<Sprite> getSprites() {
 		return getSpriteService().objectSet();
-	}
-
-	public AnimationService getAnimationService() {
-		return animationService;
-	}
-
-	public ArrayList<Animation> getAnimations() {
-		return getAnimationService().objectSet();
 	}
 
 }

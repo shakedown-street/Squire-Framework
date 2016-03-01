@@ -5,7 +5,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
-import com.squire.api.models.State;
 import com.squire.api.services.StateService;
 
 /**
@@ -18,16 +17,15 @@ import com.squire.api.services.StateService;
 @SuppressWarnings("serial")
 public abstract class SquireGame extends Canvas implements Runnable {
 
-	private StateService stateService;
-
 	private int width, height;
 	private SquireFrame frame;
 
 	private Thread thread;
-
 	public int lastFPS = 0;
 	private final static int MAX_FPS = 60;
 	private final static int BUFFERS = 2;
+	
+	private StateService stateService;
 
 	public SquireGame(int width, int height) {
 		this.width = width;
@@ -110,6 +108,12 @@ public abstract class SquireGame extends Canvas implements Runnable {
 		thread = new Thread(this);
 		thread.setPriority(Thread.MAX_PRIORITY);
 		thread.start();
+	}
+	
+	public void refreshInputMethods() {
+		addKeyListener(stateService.getState().getKeys());
+		addMouseListener(stateService.getState().getMouse());
+		addMouseMotionListener(stateService.getState().getMouse());
 	}
 
 	public StateService getStateService() {

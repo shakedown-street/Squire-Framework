@@ -51,12 +51,13 @@ public class StateService extends SquireService<State> {
 		return null;
 	}
 
-	public void setState(State state) {
-		if (state == null) {
+	public void setState(State _state) {
+		if (_state == null) {
 			return;
 		}
-		this.state = state;
-		this.state.init();
+		state = _state;
+		state.init();
+		state.getGame().refreshInputMethods();
 	}
 	
 	public void setState(String name) {

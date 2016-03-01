@@ -28,9 +28,6 @@ public abstract class SquireService<Model> {
 	}
 
 	public ArrayList<Model> objectSet() {
-		if (objects.equals(null) || objects.isEmpty()) {
-			return null;
-		}
 		return objects;
 	}
 
