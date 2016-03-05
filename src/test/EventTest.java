@@ -3,9 +3,9 @@ package test;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 
+import com.squire.api.SquireEvent;
 import com.squire.api.SquireGame;
 import com.squire.api.models.Animation;
-import com.squire.api.models.Event;
 import com.squire.api.models.Sprite;
 import com.squire.api.models.State;
 import com.squire.api.player.KeyAction;
@@ -30,7 +30,7 @@ public class EventTest extends SquireGame {
 
 			@Override
 			public void init() {
-				Event test = new Event(60, 600) {
+				SquireEvent test = new SquireEvent(60, 600) {
 					int i = 0;
 					
 					@Override

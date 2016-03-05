@@ -1,16 +1,16 @@
-package com.squire.api.models;
+package com.squire.api;
 
 /**
  * @author Jordan/shakedown-street
  */
-public abstract class Event implements Runnable {
+public abstract class SquireEvent implements Runnable {
 
 	private int interval;
 	private int cycles;
 	private boolean running;
 	private Thread thread;
 
-	public Event(int _interval, int _cycles) {
+	public SquireEvent(int _interval, int _cycles) {
 		interval = _interval;
 		cycles = _cycles;
 		running = true;
