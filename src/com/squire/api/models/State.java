@@ -7,7 +7,6 @@ import com.squire.api.SquireGame;
 import com.squire.api.player.Keys;
 import com.squire.api.player.Mouse;
 import com.squire.api.services.AnimationService;
-import com.squire.api.services.EventService;
 import com.squire.api.services.SpriteService;
 
 /**
@@ -22,7 +21,6 @@ public abstract class State {
 	private Keys keyInput;
 	private Mouse mouseInput;
 	private AnimationService animationService;
-	private EventService eventService;
 	private SpriteService spriteService;
 
 	public State(SquireGame _game, String _name) {
@@ -30,7 +28,6 @@ public abstract class State {
 		game = _game;
 		ended = false;
 		animationService = new AnimationService();
-		eventService = new EventService();
 		spriteService = new SpriteService();
 
 		keyInput = new Keys();
@@ -76,14 +73,6 @@ public abstract class State {
 
 	public ArrayList<Animation> getAnimations() {
 		return getAnimationService().objectSet();
-	}
-
-	public EventService getEventService() {
-		return eventService;
-	}
-
-	public ArrayList<Event> getEvents() {
-		return getEventService().objectSet();
 	}
 
 	public SpriteService getSpriteService() {

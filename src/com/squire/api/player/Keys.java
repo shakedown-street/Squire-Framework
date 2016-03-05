@@ -40,8 +40,10 @@ public class Keys implements KeyListener {
 		}
 	}
 	
-	public void addAction(KeyAction action) {
-		actions.add(action);
+	public void addAction(KeyAction... _actions) {
+		for (KeyAction a : _actions) {
+			actions.add(a);
+		}
 	}
 
 }

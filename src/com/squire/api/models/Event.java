@@ -3,44 +3,52 @@ package com.squire.api.models;
 /**
  * @author Jordan/shakedown-street
  */
-public abstract class Event {
+public abstract class Event implements Runnable {
 
 	private int interval;
-
 	private int cycles;
-
 	private boolean running;
+	private Thread thread;
 
-	public Event(int interval) {
-		this.interval = interval;
-		this.cycles = interval;
-		this.running = true;
+	public Event(int _interval, int _cycles) {
+		interval = _interval;
+		cycles = _cycles;
+		running = true;
+	}
+
+	public void start() {
+		thread = new Thread(this);
+		thread.start();
+	}
+	
+	public void run() {
+		int iterations = 0;
+		running = true;
+		while(running) {
+			try {
+				iterations++;
+				if (iterations >= cycles) {
+					running = false;
+				}
+				execute();
+				Thread.sleep(interval);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	public abstract void execute();
 
-	public boolean shouldExecute() {
-		cycles--;
-		if (running && cycles == 0) {
-			cycles = interval;
-			this.execute();
-		}
-		return running;
-	}
-
 	public int getInterval() {
 		return interval;
-	}
-
-	public void setInterval(int interval) {
-		this.interval = interval;
 	}
 
 	public boolean isRunning() {
 		return running;
 	}
 
-	public void setRunning(boolean running) {
-		this.running = running;
+	public void setRunning(boolean _running) {
+		running = _running;
 	}
 }

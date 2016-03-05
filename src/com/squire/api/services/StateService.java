@@ -21,7 +21,6 @@ public class StateService extends SquireService<State> {
 			try {
 				state.process();
 				state.getAnimationService().process();
-				state.getEventService().process();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
