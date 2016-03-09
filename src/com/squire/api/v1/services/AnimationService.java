@@ -1,12 +1,13 @@
-package com.squire.api.services;
+package com.squire.api.v1.services;
 
-import com.squire.api.SquireService;
-import com.squire.api.models.Animation;
+import com.squire.api.v1.models.Animation;
+import com.squire.api.v2.SquireService;
 
 /**
  * @author Jordan/shakedown-street
  */
 public class AnimationService extends SquireService<Animation> {
+
 	public void process() {
 		for (Animation anim : objectSet()) {
 			if (anim.isRunning()) {

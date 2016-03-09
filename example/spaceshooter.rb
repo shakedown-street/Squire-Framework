@@ -24,7 +24,8 @@ require './states'
 
 class Game < SquireGame
 	def init
-		getStateService().setState(StartState.new(self, 'start-state'))
+		start_state = 
+			getStateService().setState(StartState.new(self, 'start-state'))
 	end
 end
 

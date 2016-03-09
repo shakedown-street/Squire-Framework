@@ -1,9 +1,8 @@
-package com.squire.api.services;
+package com.squire.api.v2;
 
 import java.awt.Graphics;
 
-import com.squire.api.SquireService;
-import com.squire.api.models.State;
+import com.squire.api.v2.models.State;
 
 /**
  * @author Jordan/shakedown-street

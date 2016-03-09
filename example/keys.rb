@@ -1,5 +1,5 @@
-class WalkKeyAction < KeyAction
+class FlyUp < KeyAction
 	def act
-		puts "test"
+		getState().getPlayer().move(0, -5)
 	end
 end

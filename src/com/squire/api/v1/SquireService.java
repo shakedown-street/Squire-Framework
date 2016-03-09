@@ -1,4 +1,4 @@
-package com.squire.api;
+package com.squire.api.v1;
 
 import java.util.ArrayList;
 

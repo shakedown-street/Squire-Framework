@@ -1,13 +1,13 @@
-package com.squire.api.player;
+package com.squire.api.v2.input;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
-import com.squire.api.player.KeyAction.Type;
+import com.squire.api.v2.input.KeyAction.Type;
 
 public class Keys implements KeyListener {
-	
+
 	private ArrayList<KeyAction> actions = new ArrayList<KeyAction>();
 
 	@Override
@@ -39,7 +39,7 @@ public class Keys implements KeyListener {
 			}
 		}
 	}
-	
+
 	public void addAction(KeyAction... _actions) {
 		for (KeyAction a : _actions) {
 			actions.add(a);

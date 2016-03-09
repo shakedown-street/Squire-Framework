@@ -1,4 +1,4 @@
-package com.squire.api.player;
+package com.squire.api.v1.player;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

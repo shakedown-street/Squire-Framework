@@ -1,11 +1,13 @@
-package com.squire.api;
+package com.squire.api.v1;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
-import com.squire.api.services.StateService;
+import com.squire.api.v1.services.StateService;
+
+import jprice.rest.APIConnection;
 
 /**
  * Squire: An open source game framework.

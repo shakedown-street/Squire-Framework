@@ -3,13 +3,13 @@ package test;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 
-import com.squire.api.SquireEvent;
-import com.squire.api.SquireGame;
-import com.squire.api.models.Animation;
-import com.squire.api.models.Sprite;
-import com.squire.api.models.State;
-import com.squire.api.player.KeyAction;
-import com.squire.api.player.KeyAction.Type;
+import com.squire.api.v1.models.Animation;
+import com.squire.api.v1.models.Sprite;
+import com.squire.api.v2.SquireEvent;
+import com.squire.api.v2.SquireGame;
+import com.squire.api.v2.input.KeyAction;
+import com.squire.api.v2.input.KeyAction.Type;
+import com.squire.api.v2.models.State;
 
 @SuppressWarnings("serial")
 public class EventTest extends SquireGame {

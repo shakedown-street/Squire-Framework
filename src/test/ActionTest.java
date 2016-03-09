@@ -3,10 +3,10 @@ package test;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 
-import com.squire.api.SquireGame;
-import com.squire.api.models.State;
-import com.squire.api.player.KeyAction;
-import com.squire.api.player.KeyAction.Type;
+import com.squire.api.v2.SquireGame;
+import com.squire.api.v2.input.KeyAction;
+import com.squire.api.v2.input.KeyAction.Type;
+import com.squire.api.v2.models.State;
 
 @SuppressWarnings("serial")
 public class ActionTest extends SquireGame {
@@ -23,7 +23,7 @@ public class ActionTest extends SquireGame {
 
 			@Override
 			public void init() {
-				getKeys().addAction(new KeyAction(KeyEvent.VK_W, Type.RELEASED) {
+				getKeys().addAction(new KeyAction(KeyEvent.VK_W, Type.RELEASED, this) {
 					@Override
 					public void act() {
 						System.out.println("w typed");

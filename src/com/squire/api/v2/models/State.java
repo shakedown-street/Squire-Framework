@@ -1,13 +1,15 @@
-package com.squire.api.models;
+package com.squire.api.v2.models;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
 
-import com.squire.api.SquireGame;
-import com.squire.api.player.Keys;
-import com.squire.api.player.Mouse;
-import com.squire.api.services.AnimationService;
-import com.squire.api.services.SpriteService;
+import com.squire.api.v1.models.Animation;
+import com.squire.api.v1.models.Sprite;
+import com.squire.api.v1.services.AnimationService;
+import com.squire.api.v1.services.SpriteService;
+import com.squire.api.v2.SquireGame;
+import com.squire.api.v2.input.Keys;
+import com.squire.api.v2.input.Mouse;
 
 /**
  * @author Jordan/shakedown-street
