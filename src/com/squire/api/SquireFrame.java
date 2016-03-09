@@ -1,4 +1,4 @@
-package com.squire.api.v2;
+package com.squire.api;
 
 import java.awt.BorderLayout;
 

@@ -5,9 +5,10 @@ Takes care of some of the common tasks of a 2D game so you can just focus on wri
 * Canvas based rendering
 * Modular design through game states
 * Sprite and Spritesheet support
-* Sprite animation support
-* Multithreaded event system
+* Multi-threaded event system
+* Multi-threaded animation support
 * Keyboard input
+* A REST library for connecting games with RESTful services
 * Plenty coming in the next few weeks
 
 ### Features In Development
@@ -15,6 +16,5 @@ Takes care of some of the common tasks of a 2D game so you can just focus on wri
 * A music system
 * A solid rendering system
 * User interface
-* A REST framework for connecting games with RESTful services
 * REST authentication and multiplayer game support
 

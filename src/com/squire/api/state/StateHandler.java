@@ -1,13 +1,11 @@
-package com.squire.api.v2;
+package com.squire.api.state;
 
 import java.awt.Graphics;
-
-import com.squire.api.v2.models.State;
 
 /**
  * @author Jordan/shakedown-street
  */
-public class StateService extends SquireService<State> {
+public class StateHandler {
 
 	private State state;
 
@@ -19,10 +17,11 @@ public class StateService extends SquireService<State> {
 		if (isValidState()) {
 			try {
 				state.process();
-				state.getAnimationService().process();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		} else {
+			System.out.println("Invalid state");
 		}
 	}
 
@@ -33,20 +32,13 @@ public class StateService extends SquireService<State> {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		} else {
+			System.out.println("Invalid State");
 		}
 	}
 
 	public State getState() {
 		return state;
-	}
-	
-	public State retrieve(String name) {
-		for (State s : objectSet()) {
-			if (s.getName().equals(name)) {
-				return s;
-			}
-		}
-		return null;
 	}
 
 	public void setState(State _state) {
@@ -56,14 +48,6 @@ public class StateService extends SquireService<State> {
 		state = _state;
 		state.init();
 		state.getGame().refreshInputMethods();
-	}
-	
-	public void setState(String name) {
-		for (State s : objectSet()) {
-			if (s.getName().equals(name)) {
-				setState(s);
-			}
-		}
 	}
 
 }

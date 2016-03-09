@@ -1,4 +1,4 @@
-package com.squire.api.v2.services;
+package com.squire.api.services;
 
 import jprice.rest.APIConnection;
 import jprice.rest.ModelService;

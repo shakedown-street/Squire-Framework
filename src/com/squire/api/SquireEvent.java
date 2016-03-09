@@ -1,4 +1,4 @@
-package com.squire.api.v1;
+package com.squire.api;
 
 /**
  * @author Jordan/shakedown-street

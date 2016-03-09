@@ -1,10 +1,10 @@
-package com.squire.api.v2.input;
+package com.squire.api.input;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
-import com.squire.api.v2.input.KeyAction.Type;
+import com.squire.api.input.KeyAction.Type;
 
 public class Keys implements KeyListener {
 

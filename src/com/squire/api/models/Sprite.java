@@ -1,4 +1,4 @@
-package com.squire.api.v2.models;
+package com.squire.api.models;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

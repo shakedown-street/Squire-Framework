@@ -1,11 +1,11 @@
-package test2;
+package test;
 
 import java.awt.Graphics;
 
-import com.squire.api.v2.SquireGame;
-import com.squire.api.v2.models.Sprite;
-import com.squire.api.v2.models.State;
-import com.squire.api.v2.services.SpriteService;
+import com.squire.api.SquireGame;
+import com.squire.api.models.Animation;
+import com.squire.api.services.AnimationService;
+import com.squire.api.state.State;
 
 import jprice.rest.APIConnection;
 import jprice.rest.Response;
@@ -19,31 +19,31 @@ public class RestTest extends SquireGame {
 
 	@Override
 	public void init() {
-
 		State state = new State(this, "state") {
 
 			APIConnection connection;
-			SpriteService sprites;
+			AnimationService anims;
 
-			Sprite sprite;
+			Animation anim;
 
 			@Override
 			public void init() {
 				connection = new APIConnection("http://127.0.0.1:8000", "?format=json", 5000);
-				sprites = new SpriteService(connection);
+				anims = new AnimationService(connection);
 
-				Response res = sprites.retrieve(6);
-				sprite = new Sprite(res);
+				Response res = anims.retrieve(3);
+				anim = new Animation(res);
+				anim.start();
 			}
 
 			@Override
 			public void process() {
-
+				
 			}
 
 			@Override
 			public void render(Graphics g) {
-				sprite.render(g, 20, 20);
+				anim.render(g, 20, 20);
 			}
 
 			@Override
@@ -51,7 +51,7 @@ public class RestTest extends SquireGame {
 
 			}
 		};
-		getStateService().setState(state);
+		getStateHandler().setState(state);
 	}
 
 	public static void main(String[] args) {

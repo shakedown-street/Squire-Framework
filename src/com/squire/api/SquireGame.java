@@ -1,13 +1,11 @@
-package com.squire.api.v1;
+package com.squire.api;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
-import com.squire.api.v1.services.StateService;
-
-import jprice.rest.APIConnection;
+import com.squire.api.state.StateHandler;
 
 /**
  * Squire: An open source game framework.
@@ -27,7 +25,7 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	private final static int MAX_FPS = 60;
 	private final static int BUFFERS = 2;
 	
-	private StateService stateService;
+	private StateHandler stateHandler;
 
 	public SquireGame(int width, int height) {
 		this.width = width;
@@ -41,15 +39,11 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	}
 
 	private void load() {
-		stateService = new StateService();
+		stateHandler = new StateHandler();
 		frame = new SquireFrame(this);
 	}
 
 	public abstract void init();
-
-	private void process() {
-		getStateService().process();
-	}
 
 	private void render() {
 		BufferStrategy bs = this.getBufferStrategy();
@@ -63,7 +57,7 @@ public abstract class SquireGame extends Canvas implements Runnable {
 		Graphics g = bs.getDrawGraphics();
 		g.clearRect(0, 0, width, height);
 		
-		stateService.render(g);
+		stateHandler.render(g);
 
 		g.dispose();
 		bs.show();
@@ -83,7 +77,7 @@ public abstract class SquireGame extends Canvas implements Runnable {
 			then = now;
 			boolean canRender = false;
 			while (unprocessed >= 1) {
-				process();
+				stateHandler.process();
 				canRender = true;
 				unprocessed -= 1;
 			}
@@ -113,13 +107,13 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	}
 	
 	public void refreshInputMethods() {
-		addKeyListener(stateService.getState().getKeys());
-		addMouseListener(stateService.getState().getMouse());
-		addMouseMotionListener(stateService.getState().getMouse());
+		addKeyListener(stateHandler.getState().getKeys());
+		addMouseListener(stateHandler.getState().getMouse());
+		addMouseMotionListener(stateHandler.getState().getMouse());
 	}
 
-	public StateService getStateService() {
-		return stateService;
+	public StateHandler getStateHandler() {
+		return stateHandler;
 	}
 
 	public SquireFrame getFrame() {
