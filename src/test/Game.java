@@ -16,6 +16,7 @@ public class Game extends SquireGame {
         super(_w, _h);
     }
 
+    @Override
     public void init() {
         State start = new State(this) {
 

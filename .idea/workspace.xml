@@ -2,42 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb573dc5-0e68-45bb-914d-d6855f8a84bb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Squire-Framework.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/Game.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jprice_rest_beta.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/json-simple-1.1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/squire/api/models/Player.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/squire/api/services/AnimationService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/squire/api/services/PlayerService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/squire/api/services/SpriteService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/RestTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/spaceshooter/Spritesheet/sheet.xml" afterPath="$PROJECT_DIR$/assets/spaceshooter/Spritesheet/sheet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/ui/ui-2/Spritesheet/blueSheet.xml" afterPath="$PROJECT_DIR$/assets/ui/ui-2/Spritesheet/blueSheet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/ui/ui-2/Spritesheet/greenSheet.xml" afterPath="$PROJECT_DIR$/assets/ui/ui-2/Spritesheet/greenSheet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/ui/ui-2/Spritesheet/greySheet.xml" afterPath="$PROJECT_DIR$/assets/ui/ui-2/Spritesheet/greySheet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/ui/ui-2/Spritesheet/redSheet.xml" afterPath="$PROJECT_DIR$/assets/ui/ui-2/Spritesheet/redSheet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/ui/ui-2/Spritesheet/yellowSheet.xml" afterPath="$PROJECT_DIR$/assets/ui/ui-2/Spritesheet/yellowSheet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/ui/ui-2/Vector/UIpack_vector.svg" afterPath="$PROJECT_DIR$/assets/ui/ui-2/Vector/UIpack_vector.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/squire/api/SquireEvent.java" afterPath="$PROJECT_DIR$/src/com/squire/api/SquireEvent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/squire/api/SquireFrame.java" afterPath="$PROJECT_DIR$/src/com/squire/api/SquireFrame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/squire/api/SquireGame.java" afterPath="$PROJECT_DIR$/src/com/squire/api/SquireGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/squire/api/input/KeyAction.java" afterPath="$PROJECT_DIR$/src/com/squire/api/input/KeyAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/squire/api/input/Keys.java" afterPath="$PROJECT_DIR$/src/com/squire/api/input/Keys.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/squire/api/input/Mouse.java" afterPath="$PROJECT_DIR$/src/com/squire/api/input/Mouse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/squire/api/models/Animation.java" afterPath="$PROJECT_DIR$/src/com/squire/api/models/Animation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/squire/api/models/Sprite.java" afterPath="$PROJECT_DIR$/src/com/squire/api/models/Sprite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/squire/api/models/SpriteSheet.java" afterPath="$PROJECT_DIR$/src/com/squire/api/models/SpriteSheet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/squire/api/state/State.java" afterPath="$PROJECT_DIR$/src/com/squire/api/state/State.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/squire/api/state/StateHandler.java" afterPath="$PROJECT_DIR$/src/com/squire/api/state/StateHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/Game.java" afterPath="$PROJECT_DIR$/src/test/Game.java" />
     </list>
     <ignored path="Squire-Framework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,8 +29,8 @@
       <file leaf-file-name="SquireGame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/squire/api/SquireGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+            <state relative-caret-position="162">
+              <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -74,42 +41,51 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-              <folding />
+            <state relative-caret-position="-42">
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#225#226#0" expanded="true" />
+                <element signature="e#267#268#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="54">
+              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="126">
-                <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+              <first_editor relative-caret-position="202">
+                <caret line="69" column="7" selection-start-line="69" selection-start-column="7" selection-end-line="69" selection-end-column="7" />
                 <folding>
-                  <marker date="1458880050433" expanded="true" signature="1094:1212" placeholder="..." />
-                  <marker date="1458880050433" expanded="true" signature="1296:1298" placeholder=" { " />
-                  <marker date="1458880050433" expanded="true" signature="1296:1307" placeholder=" { " />
-                  <marker date="1458880050433" expanded="true" signature="1334:1340" placeholder=" }" />
-                  <marker date="1458880050433" expanded="false" signature="1373:1384" placeholder=" { " />
-                  <marker date="1458880050433" expanded="false" signature="1398:1404" placeholder=" }" />
-                  <marker date="1458880050433" expanded="true" signature="1429:1831" placeholder="{...}" />
-                  <marker date="1458880050433" expanded="true" signature="1469:1781" placeholder="{...}" />
-                  <marker date="1458880050433" expanded="true" signature="1525:1540" placeholder="{...}" />
-                  <marker date="1458880050433" expanded="true" signature="1598:1614" placeholder="{...}" />
-                  <marker date="1458880050433" expanded="true" signature="1681:1697" placeholder="{...}" />
-                  <marker date="1458880050433" expanded="true" signature="1755:1771" placeholder="{...}" />
+                  <marker date="1458880786065" expanded="true" signature="809:927" placeholder="..." />
+                  <marker date="1458880786065" expanded="true" signature="1000:1011" placeholder=" { " />
+                  <marker date="1458880786065" expanded="true" signature="1025:1031" placeholder=" }" />
+                  <marker date="1458880786065" expanded="true" signature="1056:1064" placeholder="{...}" />
+                  <marker date="1458880786065" expanded="true" signature="1766:1884" placeholder="..." />
+                  <marker date="1458880786065" expanded="true" signature="1923:2505" placeholder="{...}" />
+                  <marker date="1458880786065" expanded="true" signature="1968:1970" placeholder=" { " />
+                  <marker date="1458880786065" expanded="true" signature="1968:1979" placeholder=" { " />
+                  <marker date="1458880786065" expanded="true" signature="2006:2012" placeholder=" }" />
+                  <marker date="1458880786065" expanded="false" signature="2045:2056" placeholder=" { " />
+                  <marker date="1458880786065" expanded="false" signature="2070:2076" placeholder=" }" />
+                  <marker date="1458880786065" expanded="true" signature="2101:2503" placeholder="{...}" />
+                  <marker date="1458880786065" expanded="true" signature="2141:2453" placeholder="{...}" />
+                  <marker date="1458880786065" expanded="true" signature="2197:2212" placeholder="{...}" />
+                  <marker date="1458880786065" expanded="true" signature="2270:2286" placeholder="{...}" />
+                  <marker date="1458880786065" expanded="true" signature="2353:2369" placeholder="{...}" />
+                  <marker date="1458880786065" expanded="true" signature="2427:2443" placeholder="{...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -144,10 +120,10 @@
         <option value="$PROJECT_DIR$/src/com/squire/api/test/Game.java" />
         <option value="$PROJECT_DIR$/src/com/squire/api/SquireFrame.java" />
         <option value="$PROJECT_DIR$/src/com/squire/api/SquireEvent.java" />
-        <option value="$PROJECT_DIR$/src/test/Game.java" />
-        <option value="$PROJECT_DIR$/src/com/squire/api/SquireGame.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/com/squire/api/SquireGame.java" />
+        <option value="$PROJECT_DIR$/src/test/Game.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -622,18 +598,23 @@
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             <folding>
-              <marker date="1458880050433" expanded="true" signature="1094:1212" placeholder="..." />
-              <marker date="1458880050433" expanded="true" signature="1296:1298" placeholder=" { " />
-              <marker date="1458880050433" expanded="true" signature="1296:1307" placeholder=" { " />
-              <marker date="1458880050433" expanded="true" signature="1334:1340" placeholder=" }" />
-              <marker date="1458880050433" expanded="false" signature="1373:1384" placeholder=" { " />
-              <marker date="1458880050433" expanded="false" signature="1398:1404" placeholder=" }" />
-              <marker date="1458880050433" expanded="true" signature="1429:1831" placeholder="{...}" />
-              <marker date="1458880050433" expanded="true" signature="1469:1781" placeholder="{...}" />
-              <marker date="1458880050433" expanded="true" signature="1525:1540" placeholder="{...}" />
-              <marker date="1458880050433" expanded="true" signature="1598:1614" placeholder="{...}" />
-              <marker date="1458880050433" expanded="true" signature="1681:1697" placeholder="{...}" />
-              <marker date="1458880050433" expanded="true" signature="1755:1771" placeholder="{...}" />
+              <marker date="1458880786065" expanded="true" signature="809:927" placeholder="..." />
+              <marker date="1458880786065" expanded="true" signature="1000:1011" placeholder=" { " />
+              <marker date="1458880786065" expanded="true" signature="1025:1031" placeholder=" }" />
+              <marker date="1458880786065" expanded="true" signature="1056:1064" placeholder="{...}" />
+              <marker date="1458880786065" expanded="true" signature="1766:1884" placeholder="..." />
+              <marker date="1458880786065" expanded="true" signature="1923:2505" placeholder="{...}" />
+              <marker date="1458880786065" expanded="true" signature="1968:1970" placeholder=" { " />
+              <marker date="1458880786065" expanded="true" signature="1968:1979" placeholder=" { " />
+              <marker date="1458880786065" expanded="true" signature="2006:2012" placeholder=" }" />
+              <marker date="1458880786065" expanded="false" signature="2045:2056" placeholder=" { " />
+              <marker date="1458880786065" expanded="false" signature="2070:2076" placeholder=" }" />
+              <marker date="1458880786065" expanded="true" signature="2101:2503" placeholder="{...}" />
+              <marker date="1458880786065" expanded="true" signature="2141:2453" placeholder="{...}" />
+              <marker date="1458880786065" expanded="true" signature="2197:2212" placeholder="{...}" />
+              <marker date="1458880786065" expanded="true" signature="2270:2286" placeholder="{...}" />
+              <marker date="1458880786065" expanded="true" signature="2353:2369" placeholder="{...}" />
+              <marker date="1458880786065" expanded="true" signature="2427:2443" placeholder="{...}" />
             </folding>
           </first_editor>
           <second_editor />
@@ -730,53 +711,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding>
-            <marker date="1458880050433" expanded="true" signature="1094:1212" placeholder="..." />
-            <marker date="1458880050433" expanded="true" signature="1296:1298" placeholder=" { " />
-            <marker date="1458880050433" expanded="true" signature="1296:1307" placeholder=" { " />
-            <marker date="1458880050433" expanded="true" signature="1334:1340" placeholder=" }" />
-            <marker date="1458880050433" expanded="false" signature="1373:1384" placeholder=" { " />
-            <marker date="1458880050433" expanded="false" signature="1398:1404" placeholder=" }" />
-            <marker date="1458880050433" expanded="true" signature="1429:1831" placeholder="{...}" />
-            <marker date="1458880050433" expanded="true" signature="1469:1781" placeholder="{...}" />
-            <marker date="1458880050433" expanded="true" signature="1525:1540" placeholder="{...}" />
-            <marker date="1458880050433" expanded="true" signature="1598:1614" placeholder="{...}" />
-            <marker date="1458880050433" expanded="true" signature="1681:1697" placeholder="{...}" />
-            <marker date="1458880050433" expanded="true" signature="1755:1771" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="126">
-            <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-            <folding>
-              <marker date="1458880050433" expanded="true" signature="1094:1212" placeholder="..." />
-              <marker date="1458880050433" expanded="true" signature="1296:1298" placeholder=" { " />
-              <marker date="1458880050433" expanded="true" signature="1296:1307" placeholder=" { " />
-              <marker date="1458880050433" expanded="true" signature="1334:1340" placeholder=" }" />
-              <marker date="1458880050433" expanded="false" signature="1373:1384" placeholder=" { " />
-              <marker date="1458880050433" expanded="false" signature="1398:1404" placeholder=" }" />
-              <marker date="1458880050433" expanded="true" signature="1429:1831" placeholder="{...}" />
-              <marker date="1458880050433" expanded="true" signature="1469:1781" placeholder="{...}" />
-              <marker date="1458880050433" expanded="true" signature="1525:1540" placeholder="{...}" />
-              <marker date="1458880050433" expanded="true" signature="1598:1614" placeholder="{...}" />
-              <marker date="1458880050433" expanded="true" signature="1681:1697" placeholder="{...}" />
-              <marker date="1458880050433" expanded="true" signature="1755:1771" placeholder="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/squire/api/SquireGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+        <state relative-caret-position="162">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -785,17 +731,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-          <folding />
+        <state relative-caret-position="-42">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#225#226#0" expanded="true" />
+            <element signature="e#267#268#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding>
+            <marker date="1458880786065" expanded="true" signature="809:927" placeholder="..." />
+            <marker date="1458880786065" expanded="true" signature="1000:1011" placeholder=" { " />
+            <marker date="1458880786065" expanded="true" signature="1025:1031" placeholder=" }" />
+            <marker date="1458880786065" expanded="true" signature="1056:1064" placeholder="{...}" />
+            <marker date="1458880786065" expanded="true" signature="1766:1884" placeholder="..." />
+            <marker date="1458880786065" expanded="true" signature="1923:2505" placeholder="{...}" />
+            <marker date="1458880786065" expanded="true" signature="1968:1970" placeholder=" { " />
+            <marker date="1458880786065" expanded="true" signature="1968:1979" placeholder=" { " />
+            <marker date="1458880786065" expanded="true" signature="2006:2012" placeholder=" }" />
+            <marker date="1458880786065" expanded="false" signature="2045:2056" placeholder=" { " />
+            <marker date="1458880786065" expanded="false" signature="2070:2076" placeholder=" }" />
+            <marker date="1458880786065" expanded="true" signature="2101:2503" placeholder="{...}" />
+            <marker date="1458880786065" expanded="true" signature="2141:2453" placeholder="{...}" />
+            <marker date="1458880786065" expanded="true" signature="2197:2212" placeholder="{...}" />
+            <marker date="1458880786065" expanded="true" signature="2270:2286" placeholder="{...}" />
+            <marker date="1458880786065" expanded="true" signature="2353:2369" placeholder="{...}" />
+            <marker date="1458880786065" expanded="true" signature="2427:2443" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="202">
+            <caret line="69" column="7" selection-start-line="69" selection-start-column="7" selection-end-line="69" selection-end-column="7" />
+            <folding>
+              <marker date="1458880786065" expanded="true" signature="809:927" placeholder="..." />
+              <marker date="1458880786065" expanded="true" signature="1000:1011" placeholder=" { " />
+              <marker date="1458880786065" expanded="true" signature="1025:1031" placeholder=" }" />
+              <marker date="1458880786065" expanded="true" signature="1056:1064" placeholder="{...}" />
+              <marker date="1458880786065" expanded="true" signature="1766:1884" placeholder="..." />
+              <marker date="1458880786065" expanded="true" signature="1923:2505" placeholder="{...}" />
+              <marker date="1458880786065" expanded="true" signature="1968:1970" placeholder=" { " />
+              <marker date="1458880786065" expanded="true" signature="1968:1979" placeholder=" { " />
+              <marker date="1458880786065" expanded="true" signature="2006:2012" placeholder=" }" />
+              <marker date="1458880786065" expanded="false" signature="2045:2056" placeholder=" { " />
+              <marker date="1458880786065" expanded="false" signature="2070:2076" placeholder=" }" />
+              <marker date="1458880786065" expanded="true" signature="2101:2503" placeholder="{...}" />
+              <marker date="1458880786065" expanded="true" signature="2141:2453" placeholder="{...}" />
+              <marker date="1458880786065" expanded="true" signature="2197:2212" placeholder="{...}" />
+              <marker date="1458880786065" expanded="true" signature="2270:2286" placeholder="{...}" />
+              <marker date="1458880786065" expanded="true" signature="2353:2369" placeholder="{...}" />
+              <marker date="1458880786065" expanded="true" signature="2427:2443" placeholder="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

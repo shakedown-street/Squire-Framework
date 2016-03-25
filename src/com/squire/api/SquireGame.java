@@ -8,34 +8,6 @@ import java.awt.image.BufferStrategy;
 import com.squire.api.state.StateHandler;
 
 /**
- * Squire is an open source game framework.  Use it however you'd like to.
- *
- * Quick Start
- *
- * Step 1: If not already done, compile Squire into a Jar file
- *         and add it to your build path.
- *
- * Step 2:
- *
- * Step 3:
- *
- * State state = new State(this) {
- *
- *     @Override init() {
- *         // This will execute when the
- *     }
- *     @Override process() {
- *
- *     }
- *     @Override render(Graphics g) {
- *
- *     }
- *     @Override endHook() {
- *
- *     }
- * };
- * getStateHandler().setState(state);
- *
  * @author Jordan/shakedown-street
  */
 @SuppressWarnings("serial")
