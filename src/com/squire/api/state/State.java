@@ -11,53 +11,47 @@ import com.squire.api.input.Mouse;
  */
 public abstract class State {
 
-	private String name;
-	private SquireGame game;
-	private boolean ended;
+    private SquireGame game;
+    private boolean ended;
 
-	private Keys keyInput;
-	private Mouse mouseInput;
+    private Keys keyInput;
+    private Mouse mouseInput;
 
-	public State(SquireGame _game, String _name) {
-		this.name = _name;
-		game = _game;
-		ended = false;
+    public State(SquireGame _game) {
+        game = _game;
+        ended = false;
 
-		keyInput = new Keys();
-		mouseInput = new Mouse();
-	}
+        keyInput = new Keys();
+        mouseInput = new Mouse();
+    }
 
-	public abstract void init();
+    public abstract void init();
 
-	public abstract void process();
+    public abstract void process();
 
-	public abstract void render(Graphics g);
+    public abstract void render(Graphics g);
 
-	public abstract void endHook();
+    public abstract void endHook();
 
-	public void stop() {
-		this.ended = true;
-		this.endHook();
-	}
+    public void stop() {
+        this.ended = true;
+        this.endHook();
+    }
 
-	public String getName() {
-		return name;
-	}
+    public SquireGame getGame() {
+        return game;
+    }
 
-	public SquireGame getGame() {
-		return game;
-	}
+    public boolean hasEnded() {
+        return ended;
+    }
 
-	public boolean hasEnded() {
-		return ended;
-	}
-	
-	public Keys getKeys() {
-		return keyInput;
-	}
-	
-	public Mouse getMouse() {
-		return mouseInput;
-	}
+    public Keys getKeys() {
+        return keyInput;
+    }
+
+    public Mouse getMouse() {
+        return mouseInput;
+    }
 
 }
