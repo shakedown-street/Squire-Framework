@@ -1,46 +1,53 @@
 package test;
 
-import com.squire.api.SquireGame;
-import com.squire.api.state.State;
-import com.squire.api.models.Sprite;
+import java.awt.Graphics;
 
-import java.awt.*;
+import com.squire.api.SquireGame;
+import com.squire.api.event.AsyncEvent;
+import com.squire.api.event.ThreadedEvent;
+import com.squire.api.models.Sprite;
+import com.squire.api.state.State;
 
 public class Game extends SquireGame {
 
-    public static void main(String[] args) {
-        new Game(800, 640).start();
-    }
+	public static void main(String[] args) {
+		new Game(800, 640).start();
+	}
 
-    public Game(int _w, int _h) {
-        super(_w, _h);
-    }
+	public Game(int _w, int _h) {
+		super(_w, _h);
+	}
 
-    @Override
-    public void init() {
-        State start = new State(this) {
+	@Override
+	public void init() {
+		State start = new State(this) {
 
-            @Override
-            public void init() {
-            }
+			Sprite playerShip1_blue;
+			int shipX = 20, shipY = 20;
 
-            @Override
-            public void process() {
+			@Override
+			public void init() {
+				playerShip1_blue = new Sprite(
+						"./assets/spaceshooter/PNG/playerShip1_blue.png");
+			}
 
-            }
+			@Override
+			public void process() {
 
-            @Override
-            public void render(Graphics g) {
+			}
 
-            }
+			@Override
+			public void render(Graphics g) {
+				playerShip1_blue.render(g, shipX, shipY);
+			}
 
-            @Override
-            public void endHook() {
+			@Override
+			public void endHook() {
 
-            }
-        };
+			}
+		};
 
-        getStateHandler().setState(start);
-    }
+		getStateHandler().setState(start);
+	}
 
 }
