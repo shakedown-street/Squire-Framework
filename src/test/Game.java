@@ -3,10 +3,9 @@ package test;
 import java.awt.Graphics;
 
 import com.squire.api.SquireGame;
-import com.squire.api.event.AsyncEvent;
-import com.squire.api.event.ThreadedEvent;
 import com.squire.api.models.Sprite;
-import com.squire.api.state.State;
+
+import jprice.state.IState;
 
 public class Game extends SquireGame {
 
@@ -20,7 +19,7 @@ public class Game extends SquireGame {
 
 	@Override
 	public void init() {
-		State start = new State(this) {
+		IState state = new IState() {
 
 			Sprite playerShip1_blue;
 			int shipX = 20, shipY = 20;
@@ -42,12 +41,12 @@ public class Game extends SquireGame {
 			}
 
 			@Override
-			public void endHook() {
+			public void stop() {
 
 			}
 		};
 
-		getStateHandler().setState(start);
+		getStateHandler().setState(state);
 	}
 
 }

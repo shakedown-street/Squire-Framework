@@ -5,7 +5,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
-import com.squire.api.state.StateHandler;
+import jprice.state.StateHandler;
 
 /**
  * @author Jordan/shakedown-street
