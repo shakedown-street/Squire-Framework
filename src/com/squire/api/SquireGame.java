@@ -5,8 +5,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
-import jprice.state.StateHandler;
-
 /**
  * @author Jordan/shakedown-street
  */
@@ -20,25 +18,24 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	private SquireFrame frame;
 	private int width, height;
 
-	private StateHandler stateHandler;
-
-	public SquireGame(int _width, int _height) {
+	public SquireGame() {
+	}
+	
+	public void setDimensions(int _width, int _height) {
 		width = _width;
 		height = _height;
-		setFocusable(true);
 
+		setFocusable(true);
 		setMinimumSize(new Dimension(_width, _height));
 		setMaximumSize(new Dimension(_width, _height));
 		setSize(new Dimension(_width, _height));
-		load();
-	}
-
-	private void load() {
-		stateHandler = new StateHandler();
-		frame = new SquireFrame(this);
 	}
 
 	public abstract void init();
+	
+	private void update() {
+		
+	}
 
 	private void render() {
 		BufferStrategy bs = this.getBufferStrategy();
@@ -51,8 +48,8 @@ public abstract class SquireGame extends Canvas implements Runnable {
 
 		Graphics g = bs.getDrawGraphics();
 		g.clearRect(0, 0, width, height);
-
-		stateHandler.render(g);
+		
+		// Render
 
 		g.dispose();
 		bs.show();
@@ -72,7 +69,7 @@ public abstract class SquireGame extends Canvas implements Runnable {
 			then = now;
 			boolean canRender = false;
 			while (unprocessed >= 1) {
-				stateHandler.process();
+				update();
 				canRender = true;
 				unprocessed -= 1;
 			}
@@ -95,13 +92,11 @@ public abstract class SquireGame extends Canvas implements Runnable {
 	}
 
 	public void start() {
+		frame = new SquireFrame(this);
+		
 		thread = new Thread(this);
 		thread.setPriority(Thread.MAX_PRIORITY);
 		thread.start();
-	}
-
-	public StateHandler getStateHandler() {
-		return stateHandler;
 	}
 
 	public SquireFrame getFrame() {

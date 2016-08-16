@@ -1,4 +1,4 @@
-package com.squire.api.models;
+package com.squire.api;
 
 import java.awt.*;
 import java.util.LinkedList;

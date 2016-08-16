@@ -1,4 +1,4 @@
-package com.squire.api.models;
+package com.squire.api;
 
 import java.io.File;
 import javax.imageio.ImageIO;
