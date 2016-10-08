@@ -9,21 +9,27 @@ import javax.swing.JPanel;
  * @author Jordan/shakedown-street
  */
 @SuppressWarnings("serial")
-public class SquireFrame extends JFrame {
+public class SquireFrame {
+	
+	private JFrame frame;
+	private SquireGame game;
 
 	public SquireFrame(SquireGame _game) {
-		super();
+		frame = new JFrame(_game.getTitle());
+		game = _game;
 
 		JPanel root = new JPanel(new BorderLayout());
 		root.add(_game, BorderLayout.CENTER);
-		getContentPane().add(root);
+		frame.getContentPane().add(root);
 
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setResizable(false);
-		pack();
-
-		setLocationRelativeTo(null);
-		setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
+		frame.pack();
 	}
-
+	
+	public void launch() {
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
+		game.start();
+	}
 }

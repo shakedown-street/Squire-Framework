@@ -11,30 +11,38 @@ import java.awt.image.BufferStrategy;
 @SuppressWarnings("serial")
 public abstract class SquireGame extends Canvas implements Runnable {
 
+	private String title;
+	private int width, height;
+	private boolean running = false;
+	
+	private StateManager stateManager;
+	
+	private boolean developmentMode = true;
+	
 	private Thread thread;
 	private final static int MAX_FPS = 60;
 	private final static int BUFFERS = 2;
 
-	private SquireFrame frame;
-	private int width, height;
-
-	public SquireGame() {
+	public SquireGame(String _title, int _width, int _height) {
+		title = _title;
+		setDimensions(_width, _height);
+		setFocusable(true);
+		stateManager = new StateManager();
 	}
 	
 	public void setDimensions(int _width, int _height) {
 		width = _width;
 		height = _height;
 
-		setFocusable(true);
 		setMinimumSize(new Dimension(_width, _height));
 		setMaximumSize(new Dimension(_width, _height));
 		setSize(new Dimension(_width, _height));
 	}
 
-	public abstract void init();
+	public abstract void initGame();
 	
 	private void update() {
-		
+		stateManager.getState().update();
 	}
 
 	private void render() {
@@ -50,14 +58,30 @@ public abstract class SquireGame extends Canvas implements Runnable {
 		g.clearRect(0, 0, width, height);
 		
 		// Render
+		stateManager.getState().render(g);
 
 		g.dispose();
 		bs.show();
 	}
 
+	public void start() {
+		if (!running) {
+			running = true;
+			thread = new Thread(this);
+			thread.setPriority(Thread.MAX_PRIORITY);
+			thread.start();
+		}
+	}
+	
+	public void stop() {
+		if (running) {
+			running = false;
+		}
+	}
+
 	@Override
 	public void run() {
-		init();
+		initGame();
 		long lastFPSTime = System.currentTimeMillis();
 		int fps = 0;
 		long then = System.nanoTime();
@@ -90,17 +114,9 @@ public abstract class SquireGame extends Canvas implements Runnable {
 			}
 		}
 	}
-
-	public void start() {
-		frame = new SquireFrame(this);
-		
-		thread = new Thread(this);
-		thread.setPriority(Thread.MAX_PRIORITY);
-		thread.start();
-	}
-
-	public SquireFrame getFrame() {
-		return frame;
+	
+	public String getTitle() {
+		return title;
 	}
 
 	public int getWidth() {
@@ -109,6 +125,10 @@ public abstract class SquireGame extends Canvas implements Runnable {
 
 	public int getHeight() {
 		return height;
+	}
+	
+	public StateManager getStateManager() {
+		return stateManager;
 	}
 
 }
